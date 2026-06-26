@@ -1820,7 +1820,7 @@ footer {
   .recognition-header-mobile {
     position: sticky;
     top: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: #000000;
     zIndex: 15;
     padding: 12px 0;
     marginBottom: 12px;
@@ -1849,7 +1849,7 @@ footer {
   .recognition-header-mobile {
     position: sticky;
     top: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: #000000;
     zIndex: 15;
   }
 }
@@ -1861,39 +1861,43 @@ footer {
     top: 0;
     background: rgba(0, 0, 0, 0.95);
     zIndex: 15;
-    padding: 8px 0;
-    marginBottom: 8px;
+    padding: 10px 0;
+    marginBottom: 10px;
     paddingBottom: 6px;
     borderBottom: 2px solid #4ade80;
     marginTop: 8px;
-    fontSize: 0.9rem;
+    fontSize: 1rem;
+    fontFamily: 'Share Tech Mono', monospace;
   }
   
   .expertise-content-mobile {
-    gridTemplateColumns: repeat(auto-fill, minmax(100px, 1fr)) !important;
-    gap: 6px !important;
+    gridTemplateColumns: repeat(auto-fill, minmax(110px, 1fr)) !important;
+    gap: 10px !important;
     overflowY: auto;
     maxHeight: 40vh;
-    paddingRight: 8px;
+    paddingRight: 10px;
   }
   
   .expertise-content-mobile > div {
-    padding: 8px 10px !important;
+    padding: 12px 14px !important;
     marginBottom: 0 !important;
+    borderRadius: 4px !important;
   }
   
   .expertise-content-mobile > div > div:nth-child(2) {
-    fontSize: 0.65rem !important;
-    marginBottom: 4px !important;
+    fontSize: 0.75rem !important;
+    marginBottom: 6px !important;
+    fontFamily: 'Share Tech Mono', monospace;
   }
   
   .expertise-content-mobile > div > div:nth-child(3) {
-    height: 2px !important;
-    marginBottom: 4px !important;
+    height: 3px !important;
+    marginBottom: 6px !important;
   }
   
   .expertise-content-mobile > div > div:nth-child(4) {
-    fontSize: 0.5rem !important;
+    fontSize: 0.6rem !important;
+    fontFamily: 'Share Tech Mono', monospace;
   }
 }
 
@@ -1903,36 +1907,40 @@ footer {
     top: 0;
     background: rgba(0, 0, 0, 0.95);
     zIndex: 15;
-    padding: 6px 0;
-    marginBottom: 6px;
+    padding: 8px 0;
+    marginBottom: 8px;
     paddingBottom: 4px;
-    fontSize: 0.8rem;
+    fontSize: 0.9rem;
+    fontFamily: 'Share Tech Mono', monospace;
   }
   
   .expertise-content-mobile {
-    gridTemplateColumns: repeat(auto-fill, minmax(80px, 1fr)) !important;
-    gap: 4px !important;
+    gridTemplateColumns: repeat(auto-fill, minmax(90px, 1fr)) !important;
+    gap: 8px !important;
     overflowY: auto;
     maxHeight: 45vh;
-    paddingRight: 6px;
+    paddingRight: 8px;
   }
   
   .expertise-content-mobile > div {
-    padding: 6px 8px !important;
+    padding: 10px 12px !important;
+    borderRadius: 3px !important;
   }
   
   .expertise-content-mobile > div > div:nth-child(2) {
-    fontSize: 0.6rem !important;
-    marginBottom: 3px !important;
+    fontSize: 0.7rem !important;
+    marginBottom: 5px !important;
+    fontFamily: 'Share Tech Mono', monospace;
   }
   
   .expertise-content-mobile > div > div:nth-child(3) {
     height: 2px !important;
-    marginBottom: 3px !important;
+    marginBottom: 5px !important;
   }
   
   .expertise-content-mobile > div > div:nth-child(4) {
-    fontSize: 0.45rem !important;
+    fontSize: 0.55rem !important;
+    fontFamily: 'Share Tech Mono', monospace;
   }
 }
 
