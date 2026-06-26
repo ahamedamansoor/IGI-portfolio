@@ -344,10 +344,10 @@ function App() {
             {/* Military Corner Brackets */}
             {[...Array(4)].map((_, i) => {
               const positions = [
-                { top: '40px', left: '40px', borderTop: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
-                { top: '40px', right: '40px', borderTop: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
-                { bottom: '40px', left: '40px', borderBottom: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
-                { bottom: '40px', right: '40px', borderBottom: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
+                { top: '20px', left: '20px', borderTop: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
+                { top: '20px', right: '20px', borderTop: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
+                { bottom: '20px', left: '20px', borderBottom: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
+                { bottom: '20px', right: '20px', borderBottom: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
               ];
               return (
                 <motion.div
@@ -442,10 +442,10 @@ function App() {
             {/* Military Corner Brackets */}
             {[...Array(4)].map((_, i) => {
               const positions = [
-                { top: '40px', left: '40px', borderTop: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
-                { top: '40px', right: '40px', borderTop: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
-                { bottom: '40px', left: '40px', borderBottom: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
-                { bottom: '40px', right: '40px', borderBottom: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
+                { top: '20px', left: '20px', borderTop: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
+                { top: '20px', right: '20px', borderTop: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
+                { bottom: '20px', left: '20px', borderBottom: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
+                { bottom: '20px', right: '20px', borderBottom: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
               ];
               return (
                 <motion.div

@@ -155,10 +155,10 @@ export default function SystemBootSequence({ onComplete }) {
       {/* Military Corner Brackets */}
       {[...Array(4)].map((_, i) => {
         const positions = [
-          { top: '40px', left: '40px', borderTop: '3px solid var(--accent-cyan)', borderLeft: '3px solid var(--accent-cyan)' },
-          { top: '40px', right: '40px', borderTop: '3px solid var(--accent-cyan)', borderRight: '3px solid var(--accent-cyan)' },
-          { bottom: '40px', left: '40px', borderBottom: '3px solid var(--accent-cyan)', borderLeft: '3px solid var(--accent-cyan)' },
-          { bottom: '40px', right: '40px', borderBottom: '3px solid var(--accent-cyan)', borderRight: '3px solid var(--accent-cyan)' },
+          { top: '20px', left: '20px', borderTop: '3px solid var(--accent-cyan)', borderLeft: '3px solid var(--accent-cyan)' },
+          { top: '20px', right: '20px', borderTop: '3px solid var(--accent-cyan)', borderRight: '3px solid var(--accent-cyan)' },
+          { bottom: '20px', left: '20px', borderBottom: '3px solid var(--accent-cyan)', borderLeft: '3px solid var(--accent-cyan)' },
+          { bottom: '20px', right: '20px', borderBottom: '3px solid var(--accent-cyan)', borderRight: '3px solid var(--accent-cyan)' },
         ];
         return (
           <motion.div
