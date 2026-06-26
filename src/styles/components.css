@@ -848,6 +848,61 @@ footer {
   border-right: 3px solid #4ade80;
 }
 
+/* Mobile adjustments for MarcusNameAnimation corner brackets */
+@media (max-width: 768px) {
+  .corner-bracket {
+    width: 60px;
+    height: 60px;
+  }
+
+  .corner-bracket-tl {
+    top: 10px;
+    left: 10px;
+  }
+
+  .corner-bracket-tr {
+    top: 10px;
+    right: 10px;
+  }
+
+  .corner-bracket-bl {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .corner-bracket-br {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .corner-bracket {
+    width: 50px;
+    height: 50px;
+  }
+
+  .corner-bracket-tl {
+    top: 8px;
+    left: 8px;
+  }
+
+  .corner-bracket-tr {
+    top: 8px;
+    right: 8px;
+  }
+
+  .corner-bracket-bl {
+    bottom: 8px;
+    left: 8px;
+  }
+
+  .corner-bracket-br {
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
 @media (max-width: 768px) {
   .corner-bracket {
     width: 60px;
@@ -1801,6 +1856,24 @@ footer {
     borderBottom: 2px solid #4ade80;
     marginTop: 10px;
   }
+
+  .contact-header-mobile span:last-child {
+    display: none;
+  }
+
+  .contact-header-mobile span:first-child {
+    font-size: 0.9rem;
+    visibility: hidden;
+    position: relative;
+  }
+
+  .contact-header-mobile span:first-child::before {
+    content: "[CONTACT]";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
   
   .contact-content-mobile {
     gap: 12px;
@@ -1831,6 +1904,24 @@ footer {
     top: 0;
     background: rgba(0, 0, 0, 0.95);
     zIndex: 15;
+  }
+
+  .contact-header-mobile span:last-child {
+    display: none;
+  }
+
+  .contact-header-mobile span:first-child {
+    font-size: 0.85rem;
+    visibility: hidden;
+    position: relative;
+  }
+
+  .contact-header-mobile span:first-child::before {
+    content: "[CONTACT]";
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
   
   .contact-content-mobile {
@@ -1972,5 +2063,18 @@ footer {
   .expanded-content {
     maxHeight: 20vh;
     paddingRight: 8px;
+  }
+}
+
+/* Hide encryption status container on mobile */
+@media (max-width: 768px) {
+  .encryption-status-container {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .encryption-status-container {
+    display: none;
   }
 }

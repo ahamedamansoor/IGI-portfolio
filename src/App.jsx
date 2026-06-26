@@ -1599,6 +1599,7 @@ function App() {
                       </motion.div>
 
                     <motion.div
+                      className="encryption-status-container"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.7, duration: 0.5 }}
@@ -1610,7 +1611,7 @@ function App() {
                         textAlign: 'center',
                       }}
                     >
-                      <div style={{
+                      <div className="encryption-status-label" style={{
                         fontSize: '0.8rem',
                         color: '#22c55e',
                         fontFamily: 'monospace',
@@ -1619,7 +1620,7 @@ function App() {
                       }}>
                         ► ENCRYPTION STATUS
                       </div>
-                      <div style={{
+                      <div className="encryption-status-value" style={{
                         fontSize: '1rem',
                         color: '#4ade80',
                         fontFamily: 'monospace',
@@ -1921,165 +1922,7 @@ function App() {
                       ))}
                       </div>
 
-                      {/* Achievements Section */}
-                      <div>
-                        <div style={{
-                          fontSize: '1rem',
-                          color: '#4ade80',
-                          fontFamily: 'monospace',
-                          marginBottom: '15px',
-                          fontWeight: '600',
-                          letterSpacing: '0.1em',
-                        }}>
-                          ► PROFESSIONAL ACHIEVEMENTS
-                        </div>
-                        {[
-                        {
-                          title: "Great Impact - Infra-UI",
-                          year: "2021 & 2022",
-                          company: "Cisco Systems",
-                          description: "Honoured for great impact in CNC infra-ui and got $20000 as reward"
-                        },
-                        {
-                          title: "Grade-8 Promotion",
-                          year: "2022",
-                          company: "Cisco Systems",
-                          description: "Got promoted as senior software engineer"
-                        }
-                      ].map((achievement, index) => (
-                        <motion.div
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.05, duration: 0.3 }}
-                          style={{
-                            position: 'relative',
-                            paddingLeft: '45px',
-                            paddingBottom: index === 1 ? '0' : '24px',
-                          }}
-                        >
-                          <motion.div
-                            style={{
-                              position: 'absolute',
-                              left: '12px',
-                              top: '8px',
-                              width: '16px',
-                              height: '16px',
-                              borderRadius: '50%',
-                              background: expandedAchievement[index] ? '#4ade80' : 'rgba(74, 222, 128, 0.5)',
-                              border: '2px solid #4ade80',
-                              zIndex: 1,
-                              cursor: 'pointer',
-                            }}
-                            whileHover={{ scale: 1.2 }}
-                            onClick={() => {
-                              const isCurrentlyExpanded = expandedAchievement[index];
-                              const newExpanded = {};
-                              if (!isCurrentlyExpanded) {
-                                newExpanded[index] = true;
-                              }
-                              setExpandedAchievement(newExpanded);
-                            }}
-                          />
-                          <motion.div
-                            style={{
-                              background: expandedAchievement[index] ? 'rgba(74, 222, 128, 0.15)' : 'rgba(74, 222, 128, 0.1)',
-                              border: expandedAchievement[index] ? '1px solid #4ade80' : '1px solid rgba(74, 222, 128, 0.4)',
-                              borderRadius: '8px',
-                              padding: '12px 16px',
-                              position: 'relative',
-                              transition: 'all 0.3s ease',
-                              cursor: 'pointer',
-                            }}
-                            onClick={() => {
-                              const isCurrentlyExpanded = expandedAchievement[index];
-                              const newExpanded = {};
-                              if (!isCurrentlyExpanded) {
-                                newExpanded[index] = true;
-                              }
-                              setExpandedAchievement(newExpanded);
-                            }}
-                          >
-                            <div style={{
-                              display: 'flex',
-                              justifyContent: 'space-between',
-                              alignItems: 'center',
-                              marginBottom: expandedAchievement[index] ? '10px' : '0',
-                            }}>
-                              <div style={{ flex: 1 }}>
-                                <div style={{
-                                  fontSize: '0.95rem',
-                                  color: '#ffffff',
-                                  fontFamily: 'monospace',
-                                  fontWeight: '700',
-                                  marginBottom: '2px',
-                                }}>
-                                  {achievement.title}
-                                </div>
-                                <div style={{
-                                  fontSize: '0.75rem',
-                                  color: '#888',
-                                  fontFamily: 'monospace',
-                                }}>
-                                  {achievement.company}
-                                </div>
-                              </div>
-                              <motion.div
-                                animate={{ rotate: expandedAchievement[index] ? 180 : 0 }}
-                                transition={{ duration: 0.2 }}
-                                style={{
-                                  fontSize: '0.8rem',
-                                  color: '#4ade80',
-                                  fontWeight: '700',
-                                  marginLeft: '12px',
-                                }}
-                              >
-                                ▼
-                              </motion.div>
-                            </div>
-
-                            <AnimatePresence>
-                              {expandedAchievement[index] && (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: 'auto' }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  transition={{ duration: 0.3 }}
-                                  style={{
-                                    borderTop: '1px solid rgba(74, 222, 128, 0.2)',
-                                    paddingTop: '10px',
-                                    marginTop: '8px',
-                                  }}
-                                >
-                                  <div style={{
-                                    fontSize: '0.8rem',
-                                    color: '#c0c0c0',
-                                    fontFamily: 'monospace',
-                                    marginBottom: '8px',
-                                  }}>
-                                    {achievement.description}
-                                  </div>
-                                  <div style={{
-                                    fontSize: '0.85rem',
-                                    color: '#4ade80',
-                                    fontFamily: 'monospace',
-                                    fontWeight: '700',
-                                    background: 'rgba(74, 222, 128, 0.2)',
-                                    padding: '6px 10px',
-                                    border: '1px solid #4ade80',
-                                    borderRadius: '4px',
-                                    display: 'inline-block',
-                                  }}>
-                                    {achievement.year}
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </motion.div>
-                        </motion.div>
-                      ))}
-                      </div>
-                    </div>
+                                          </div>
                   </div>
                 </div>
                 </motion.div>

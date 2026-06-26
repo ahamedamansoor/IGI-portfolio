@@ -125,22 +125,16 @@ export default function MarcusNameAnimation({ onComplete }) {
 
       {/* Military Corner Brackets */}
       {[...Array(4)].map((_, i) => {
-        const positions = [
-          { top: '20px', left: '20px', borderTop: '3px solid var(--accent-cyan)', borderLeft: '3px solid var(--accent-cyan)' },
-          { top: '20px', right: '20px', borderTop: '3px solid var(--accent-cyan)', borderRight: '3px solid var(--accent-cyan)' },
-          { bottom: '20px', left: '20px', borderBottom: '3px solid var(--accent-cyan)', borderLeft: '3px solid var(--accent-cyan)' },
-          { bottom: '20px', right: '20px', borderBottom: '3px solid var(--accent-cyan)', borderRight: '3px solid var(--accent-cyan)' },
+        const classes = [
+          'corner-bracket corner-bracket-tl',
+          'corner-bracket corner-bracket-tr',
+          'corner-bracket corner-bracket-bl',
+          'corner-bracket corner-bracket-br',
         ];
         return (
           <motion.div
             key={i}
-            style={{
-              position: 'absolute',
-              width: '80px',
-              height: '80px',
-              ...positions[i],
-              opacity: 0.8,
-            }}
+            className={classes[i]}
             animate={{
               opacity: [0.5, 1, 0.5],
               scale: [1, 1.05, 1],
