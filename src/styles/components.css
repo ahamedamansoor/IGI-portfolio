@@ -1972,6 +1972,7 @@ footer {
   
   .expertise-content-mobile > div {
     padding: 8px 12px !important;
+    gap: 20px;
     marginBottom: 0 !important;
     borderRadius: 20px !important;
     display: inline-flex !important;
@@ -2021,10 +2022,11 @@ footer {
   }
   
   .expertise-content-mobile > div {
-    padding: 6px 10px !important;
+    padding: 10px 10px 20px 12px !important;
+    gap: 20px!important;
     borderRadius: 18px !important;
     display: inline-flex !important;
-    alignItems: center !important;
+    alignItems: baseline !important;
     fontSize: 0.65rem !important;
   }
   
