@@ -63,28 +63,11 @@ export default function JarvisBootSequence({ onComplete }) {
 
   return (
     <motion.div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: '#000',
-        zIndex: 10000,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontFamily: 'var(--font-mono)',
-      }}
+      className="jarvis-container"
     >
       {/* Central HUD Element */}
       <motion.div
-        style={{
-          position: 'relative',
-          width: '400px',
-          height: '400px',
-        }}
+        className="jarvis-hud"
         animate={{
           rotate: 360,
         }}
@@ -140,14 +123,7 @@ export default function JarvisBootSequence({ onComplete }) {
 
       {/* Center Logo */}
       <motion.div
-        style={{
-          position: 'absolute',
-          fontSize: '4rem',
-          fontWeight: '700',
-          color: '#06b6d4',
-          textShadow: '0 0 50px rgba(6, 182, 212, 1)',
-          letterSpacing: '0.8rem',
-        }}
+        className="jarvis-logo"
         animate={{
           opacity: [0.5, 1, 0.5],
           scale: [1, 1.05, 1],
@@ -167,15 +143,9 @@ export default function JarvisBootSequence({ onComplete }) {
 
       {/* System Status */}
       <motion.div
+        className="jarvis-status"
         style={{
-          position: 'absolute',
-          top: '25%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          fontSize: '0.9rem',
           color: systemStatus === 'ONLINE' ? '#10b981' : '#06b6d4',
-          fontFamily: 'var(--font-mono)',
-          letterSpacing: '0.2rem',
         }}
         animate={{
           opacity: [0.6, 1, 0.6],
@@ -193,16 +163,7 @@ export default function JarvisBootSequence({ onComplete }) {
 
       {/* Current Boot Message */}
       <motion.div
-        style={{
-          position: 'absolute',
-          bottom: '30%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          fontSize: '1rem',
-          color: '#06b6d4',
-          textAlign: 'center',
-          minWidth: '500px',
-        }}
+        className="jarvis-message"
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -230,18 +191,7 @@ export default function JarvisBootSequence({ onComplete }) {
 
       {/* Progress Bar */}
       <motion.div
-        style={{
-          position: 'absolute',
-          bottom: '20%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '500px',
-          height: '6px',
-          background: 'rgba(6, 182, 212, 0.2)',
-          borderRadius: '3px',
-          overflow: 'hidden',
-          border: '1px solid rgba(6, 182, 212, 0.3)',
-        }}
+        className="jarvis-progress"
       >
         <motion.div
           style={{
@@ -261,17 +211,7 @@ export default function JarvisBootSequence({ onComplete }) {
 
       {/* Percentage Display */}
       <motion.div
-        style={{
-          position: 'absolute',
-          bottom: '16%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          fontSize: '1rem',
-          color: '#06b6d4',
-          fontFamily: 'var(--font-mono)',
-          fontWeight: '700',
-          letterSpacing: '0.2rem',
-        }}
+        className="jarvis-percentage"
         animate={{
           textShadow: '0 0 15px rgba(6, 182, 212, 0.8)'
         }}
@@ -283,11 +223,8 @@ export default function JarvisBootSequence({ onComplete }) {
       {[...Array(4)].map((_, i) => (
         <motion.div
           key={i}
+          className="jarvis-corner"
           style={{
-            position: 'absolute',
-            width: '120px',
-            height: '120px',
-            border: '2px solid rgba(6, 182, 212, 0.4)',
             ...(i === 0 ? { top: '40px', left: '40px', borderRight: 'none', borderBottom: 'none' } : {}),
             ...(i === 1 ? { top: '40px', right: '40px', borderLeft: 'none', borderBottom: 'none' } : {}),
             ...(i === 2 ? { bottom: '40px', left: '40px', borderRight: 'none', borderTop: 'none' } : {}),

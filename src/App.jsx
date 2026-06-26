@@ -196,8 +196,8 @@ function App() {
         onClick={toggleAudio}
         style={{
           position: 'fixed',
-          top: '60px',
-          right: '60px',
+          top: '40px',
+          right: '40px',
           zIndex: 99999,
           background: 'rgba(0, 0, 0, 0.8)',
           border: '2px solid #4ade80',
@@ -343,23 +343,11 @@ function App() {
 
             {/* Military Corner Brackets */}
             {[...Array(4)].map((_, i) => {
-              const positions = [
-                { top: '20px', left: '20px', borderTop: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
-                { top: '20px', right: '20px', borderTop: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
-                { bottom: '20px', left: '20px', borderBottom: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
-                { bottom: '20px', right: '20px', borderBottom: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
-              ];
+              const bracketClasses = ['corner-bracket-tl', 'corner-bracket-tr', 'corner-bracket-bl', 'corner-bracket-br'];
               return (
                 <motion.div
                   key={i}
-                  style={{
-                    position: 'absolute',
-                    width: '80px',
-                    height: '80px',
-                    ...positions[i],
-                    opacity: 0.8,
-                    pointerEvents: 'none',
-                  }}
+                  className={`corner-bracket ${bracketClasses[i]}`}
                   animate={{
                     opacity: [0.5, 1, 0.5],
                     scale: [1, 1.05, 1],
@@ -441,24 +429,12 @@ function App() {
 
             {/* Military Corner Brackets */}
             {[...Array(4)].map((_, i) => {
-              const positions = [
-                { top: '20px', left: '20px', borderTop: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
-                { top: '20px', right: '20px', borderTop: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
-                { bottom: '20px', left: '20px', borderBottom: '3px solid #4ade80', borderLeft: '3px solid #4ade80' },
-                { bottom: '20px', right: '20px', borderBottom: '3px solid #4ade80', borderRight: '3px solid #4ade80' },
-              ];
+              const bracketClasses = ['corner-bracket-tl', 'corner-bracket-tr', 'corner-bracket-bl', 'corner-bracket-br'];
               return (
                 <motion.div
                   key={i}
-                  style={{
-                    position: 'absolute',
-                    width: '80px',
-                    height: '80px',
-                    ...positions[i],
-                    opacity: 0.8,
-                    pointerEvents: 'none',
-                    zIndex: 1,
-                  }}
+                  className={`corner-bracket ${bracketClasses[i]}`}
+                  style={{ zIndex: 1 }}
                   animate={{
                     opacity: [0.5, 1, 0.5],
                     scale: [1, 1.05, 1],
@@ -559,32 +535,15 @@ function App() {
                     transformOrigin: 'center center',
                   }}
                 >
-                  <div style={{
-                    padding: '40px',
-                    background: 'rgba(0, 0, 0, 0.95)',
-                    border: '2px solid #4ade80',
-                    borderRadius: 0,
-                    maxWidth: '900px',
-                    margin: '20px auto',
-                    boxShadow: '0 0 30px rgba(74, 222, 128, 0.3)',
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    overflow: 'hidden',
+                  <div className="section-container expertise-container-mobile" style={{
+                    minWidth: '900px',
                   }}>
-                  <h3 style={{
-                    fontSize: '1.5rem',
-                    color: '#4ade80',
-                    fontFamily: 'monospace',
-                    letterSpacing: '0.05em',
+                  <h3 className="section-header expertise-header-mobile" style={{
                     marginBottom: '20px',
-                    fontWeight: '700',
-                    paddingBottom: '10px',
-                    borderBottom: '2px solid #4ade80',
                   }}>
-                    [EXPERTISE] - OPERATIONAL CAPABILITIES
+                    <span>[EXPERTISE] - OPERATIONAL CAPABILITIES</span>
                   </h3>
-                  <div style={{
+                  <div className="expertise-content-mobile" style={{
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
                     gap: '10px',
@@ -699,14 +658,13 @@ function App() {
                     transformOrigin: 'center center',
                   }}
                 >
-                  <div style={{
+                  <div className="experience-container-mobile" style={{
                     padding: '40px',
                     background: 'rgba(0, 0, 0, 0.95)',
                     border: '2px solid #4ade80',
                     borderRadius: 0,
                     maxWidth: '900px',
                     width: '100%',
-                    minWidth: '900px',
                     margin: '20px auto',
                     boxShadow: '0 0 30px rgba(74, 222, 128, 0.3)',
                     position: 'relative',
@@ -714,18 +672,8 @@ function App() {
                     flexDirection: 'column',
                     overflow: 'hidden',
                   }}>
-                    <h3 style={{
-                      fontSize: '1.5rem',
-                      color: '#4ade80',
-                      fontFamily: 'monospace',
-                      letterSpacing: '0.05em',
+                    <h3 className="section-header experience-header-mobile" style={{
                       marginBottom: '30px',
-                      fontWeight: '700',
-                      paddingBottom: '10px',
-                      borderBottom: '2px solid #4ade80',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
                     }}>
                       <span>[EXPERIENCE] - MISSION HISTORY</span>
                       <motion.span
@@ -740,12 +688,13 @@ function App() {
                       </motion.span>
                     </h3>
 
-                    <div style={{
-                      maxHeight: '70vh',
+                    <div className="experience-content-mobile" style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '20px',
+                      maxHeight: '60vh',
                       overflowY: 'auto',
                       paddingRight: '10px',
-                      width: '100%',
-                      minWidth: '100%',
                     }}>
                       {experiences.map((exp, index) => (
                         <motion.div
@@ -757,12 +706,10 @@ function App() {
                             background: 'rgba(74, 222, 128, 0.05)',
                             border: '1px solid rgba(74, 222, 128, 0.3)',
                             borderRadius: 0,
-                            padding: '25px',
-                            marginBottom: '20px',
+                            padding: '20px',
                             position: 'relative',
                             overflow: 'hidden',
-                            width: '100%',
-                            minWidth: '100%',
+                            transition: 'all 0.3s ease',
                           }}
                         >
                           <motion.div
@@ -772,39 +719,37 @@ function App() {
                               left: 0,
                               width: '4px',
                               height: '100%',
-                              background: 'linear-gradient(180deg, #4ade80, #22c55e, #16a34a)',
+                              background: 'linear-gradient(180deg, #4ade80, #22c55e)',
                             }}
                           />
                           <div style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'flex-start',
-                            marginBottom: '15px',
-                            cursor: 'pointer',
-                          }}
-                          onClick={() => setExpandedExperience(prev => ({ ...prev, [exp.id]: !prev[exp.id] }))}
-                        >
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          cursor: 'pointer',
+                          marginBottom: '15px',
+                        }}
+                        onClick={() => setExpandedExperience(prev => ({ ...prev, [exp.id]: !prev[exp.id] }))}
+                      >
                             <h4 style={{
                               fontSize: '1.2rem',
-                              color: '#ffffff',
+                              color: '#4ade80',
                               fontFamily: 'monospace',
                               fontWeight: '700',
-                              margin: 0,
-                              lineHeight: '1.3',
+                              marginBottom: '5px',
                             }}>
                               {exp.title}
                             </h4>
                             <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                               <div style={{
-                                fontSize: '0.8rem',
-                                color: '#4ade80',
-                                fontFamily: 'monospace',
-                                background: 'rgba(74, 222, 128, 0.2)',
-                                padding: '4px 8px',
-                                borderRadius: 0,
-                                flexShrink: 0,
-                                fontWeight: '600',
-                              }}>
+                              fontSize: '0.7rem',
+                              color: '#22c55e',
+                              fontFamily: 'monospace',
+                              fontWeight: '600',
+                              background: 'rgba(34, 197, 94, 0.1)',
+                              padding: '3px 8px',
+                              border: '1px solid rgba(34, 197, 94, 0.3)',
+                            }}>
                                 {exp.status}
                               </div>
                               <motion.div
@@ -828,13 +773,13 @@ function App() {
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.3 }}
+                                className="expanded-content"
                               >
                                 <div style={{
                                   fontSize: '1rem',
                                   color: '#c0c0c0',
                                   fontFamily: 'monospace',
-                                  marginBottom: '8px',
-                                  fontWeight: '600',
+                                  marginBottom: '5px',
                                 }}>
                                   {exp.company}
                                 </div>
@@ -872,11 +817,11 @@ function App() {
                                   </div>
                                 )}
                                 <div style={{
-                                  fontSize: '0.9rem',
-                                  color: '#c0c0c0',
+                                  fontSize: '0.85rem',
+                                  color: '#4ade80',
                                   fontFamily: 'monospace',
-                                  marginBottom: '15px',
-                                  lineHeight: '1.6',
+                                  marginBottom: '10px',
+                                  fontWeight: '600',
                                 }}>
                                   <div style={{
                                     fontSize: '0.85rem',
@@ -903,12 +848,7 @@ function App() {
                                   </ul>
                                 </div>
                                 {exp.technologies && (
-                                  <div style={{
-                                    fontSize: '0.85rem',
-                                    color: '#888',
-                                    fontFamily: 'monospace',
-                                    marginTop: '10px',
-                                  }}>
+                                  <div style={{ marginTop: '10px' }}>
                                     <span style={{ color: '#4ade80', fontWeight: '600' }}>TECHNOLOGIES:</span> {exp.technologies}
                                   </div>
                                 )}
@@ -947,31 +887,9 @@ function App() {
                     transformOrigin: 'center center',
                   }}
                 >
-                  <div style={{
-                    padding: '40px',
-                    background: 'rgba(0, 0, 0, 0.95)',
-                    border: '2px solid #4ade80',
-                    borderRadius: 0,
-                    width: '900px',
-                    margin: '20px auto',
-                    boxShadow: '0 0 30px rgba(74, 222, 128, 0.3)',
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    overflow: 'hidden',
-                  }}>
-                    <h3 style={{
-                      fontSize: '1.5rem',
-                      color: '#4ade80',
-                      fontFamily: 'monospace',
-                      letterSpacing: '0.05em',
+                  <div className="projects-container">
+                    <h3 className="section-header" style={{
                       marginBottom: '30px',
-                      fontWeight: '700',
-                      paddingBottom: '10px',
-                      borderBottom: '2px solid #4ade80',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
                     }}>
                       <span>[PROJECTS] - MISSION PROTOCOLS</span>
                       <motion.span
@@ -989,31 +907,12 @@ function App() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2, duration: 0.5 }}
-                      style={{
-                        background: 'rgba(74, 222, 128, 0.05)',
-                        border: '1px solid rgba(74, 222, 128, 0.3)',
-                        borderRadius: 0,
-                        padding: '25px',
-                        position: 'relative',
-                        overflow: 'hidden',
-                      }}
+                      className="projects-card"
                     >
                       <motion.div
-                        style={{
-                          position: 'absolute',
-                          top: 0,
-                          left: 0,
-                          width: '4px',
-                          height: '100%',
-                          background: 'linear-gradient(180deg, #4ade80, #22c55e, #16a34a)',
-                        }}
+                        className="projects-card-accent"
                       />
-                      <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: '1fr auto',
-                        gap: '20px',
-                        alignItems: 'center',
-                      }}>
+                      <div className="projects-header">
                         <div>
                           <div style={{
                             display: 'flex',
@@ -1040,13 +939,7 @@ function App() {
                             >
                               ⚡
                             </motion.div>
-                            <h4 style={{
-                              fontSize: '1.4rem',
-                              color: '#ffffff',
-                              fontFamily: 'monospace',
-                              fontWeight: '600',
-                              margin: 0,
-                            }}>
+                            <h4 className="projects-title">
                               CoderPod.org
                             </h4>
                             <motion.div
@@ -1070,14 +963,9 @@ function App() {
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.3 }}
+                                className="expanded-content"
                               >
-                          <p style={{
-                            fontSize: '0.95rem',
-                            color: '#b0b0b0',
-                            fontFamily: 'monospace',
-                            lineHeight: '1.6',
-                            marginBottom: '15px',
-                          }}>
+                          <p className="projects-description">
                             Built full-stack AI-powered coding platform for developers using Next.js and agentic AI tools (Claude, Codex, Windsurf).
                           </p>
                           <div style={{
@@ -1092,15 +980,7 @@ function App() {
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: 0.3 + i * 0.1, duration: 0.3 }}
-                                style={{
-                                  padding: '4px 10px',
-                                  background: 'rgba(74, 222, 128, 0.1)',
-                                  border: '1px solid rgba(74, 222, 128, 0.3)',
-                                  borderRadius: 0,
-                                  fontSize: '0.75rem',
-                                  color: '#4ade80',
-                                  fontFamily: 'monospace',
-                                }}
+                                className="projects-tech-tag"
                               >
                                 {tech}
                               </motion.span>
@@ -1119,24 +999,7 @@ function App() {
                             href="https://coderpod.org"
                             target="_blank"
                             rel="noopener noreferrer"
-                            style={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: '10px',
-                              padding: '15px 25px',
-                              background: 'linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 197, 94, 0.2))',
-                              border: '2px solid #4ade80',
-                              borderRadius: 0,
-                              color: '#4ade80',
-                              fontFamily: 'monospace',
-                              fontSize: '14px',
-                              fontWeight: 'bold',
-                              textDecoration: 'none',
-                              cursor: 'pointer',
-                              transition: 'all 0.3s ease',
-                              position: 'relative',
-                              overflow: 'hidden',
-                            }}
+                            className="projects-access-btn"
                             onMouseEnter={(e) => {
                               e.target.style.background = '#4ade80';
                               e.target.style.color = 'black';
@@ -1252,31 +1115,9 @@ function App() {
                     margin: '0 auto',
                   }}
                 >
-                  <div style={{
-                    padding: '40px',
-                    background: 'rgba(0, 0, 0, 0.95)',
-                    border: '2px solid #4ade80',
-                    borderRadius: 0,
-                    maxWidth: '900px',
-                    margin: '20px auto',
-                    boxShadow: '0 0 30px rgba(74, 222, 128, 0.3)',
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    overflow: 'hidden',
-                  }}>
-                    <h3 style={{
-                      fontSize: '1.5rem',
-                      color: '#4ade80',
-                      fontFamily: 'monospace',
-                      letterSpacing: '0.05em',
+                  <div className="section-container">
+                    <h3 className="section-header contact-header-mobile" style={{
                       marginBottom: '30px',
-                      fontWeight: '700',
-                      paddingBottom: '10px',
-                      borderBottom: '2px solid #4ade80',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
                     }}>
                       <span>[CONTACT] - SECURE CHANNEL</span>
                       <motion.span
@@ -1295,6 +1136,7 @@ function App() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2, duration: 0.5 }}
+                      className="contact-content-mobile"
                       style={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -1781,37 +1623,14 @@ function App() {
                     margin: '0 auto',
                   }}
                 >
-                  <div style={{
-                    padding: '30px',
-                    background: 'rgba(0, 0, 0, 0.95)',
-                    border: '2px solid #4ade80',
-                    borderRadius: 0,
-                    maxWidth: '900px',
-                    margin: '20px auto',
-                    boxShadow: '0 0 30px rgba(74, 222, 128, 0.3)',
-                    position: 'relative',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    overflow: 'hidden',
+                  <div className="section-container" style={{
                     maxHeight: '80vh',
                   }}>
-                    <div style={{
-                      overflowY: 'auto',
-                      flex: 1,
+                    <div className="section-content" style={{
                       paddingRight: '10px',
                     }}>
-                      <h3 style={{
-                        fontSize: '1.5rem',
-                        color: '#4ade80',
-                        fontFamily: 'monospace',
-                        letterSpacing: '0.05em',
+                      <h3 className="section-header recognition-header-mobile" style={{
                         marginBottom: '25px',
-                        fontWeight: '700',
-                        paddingBottom: '10px',
-                        borderBottom: '2px solid #4ade80',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
                       }}>
                         <span>[RECOGNITION] - TESTIMONIALS & ACHIEVEMENTS</span>
                       <motion.span

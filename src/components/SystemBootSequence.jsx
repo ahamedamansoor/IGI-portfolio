@@ -96,21 +96,7 @@ export default function SystemBootSequence({ onComplete }) {
 
   return (
     <motion.div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(0, 20, 0, 0.95) 50%, rgba(0, 0, 0, 0.98) 100%)',
-        zIndex: 10000,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontFamily: 'monospace',
-        overflow: 'hidden',
-      }}
+      className="boot-container"
       animate={{
         x: [0, -1, 1, -0.5, 0.5, 0],
       }}
@@ -154,22 +140,11 @@ export default function SystemBootSequence({ onComplete }) {
 
       {/* Military Corner Brackets */}
       {[...Array(4)].map((_, i) => {
-        const positions = [
-          { top: '20px', left: '20px', borderTop: '3px solid var(--accent-cyan)', borderLeft: '3px solid var(--accent-cyan)' },
-          { top: '20px', right: '20px', borderTop: '3px solid var(--accent-cyan)', borderRight: '3px solid var(--accent-cyan)' },
-          { bottom: '20px', left: '20px', borderBottom: '3px solid var(--accent-cyan)', borderLeft: '3px solid var(--accent-cyan)' },
-          { bottom: '20px', right: '20px', borderBottom: '3px solid var(--accent-cyan)', borderRight: '3px solid var(--accent-cyan)' },
-        ];
+        const bracketClasses = ['corner-bracket-tl', 'corner-bracket-tr', 'corner-bracket-bl', 'corner-bracket-br'];
         return (
           <motion.div
             key={i}
-            style={{
-              position: 'absolute',
-              width: '80px',
-              height: '80px',
-              ...positions[i],
-              opacity: 0.8,
-            }}
+            className={`corner-bracket ${bracketClasses[i]}`}
             animate={{
               opacity: [0.5, 1, 0.5],
               scale: [1, 1.05, 1],
@@ -186,16 +161,7 @@ export default function SystemBootSequence({ onComplete }) {
 
       {/* Terminal Window */}
       <motion.div
-        style={{
-          position: 'relative',
-          width: '700px',
-          background: 'rgba(0, 0, 0, 0.95)',
-          border: '2px solid var(--accent-cyan)',
-          borderRadius: '4px',
-          padding: '30px',
-          boxShadow: '0 0 50px rgba(74, 222, 128, 0.3), inset 0 0 30px rgba(74, 222, 128, 0.1)',
-          zIndex: 10,
-        }}
+        className="boot-terminal"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ 
           scale: 1, 
@@ -274,18 +240,9 @@ export default function SystemBootSequence({ onComplete }) {
         </motion.div>
 
         {/* Terminal Content */}
-        <div 
+        <div
           ref={terminalRef}
-          style={{ 
-            color: 'var(--accent-cyan)', 
-            fontSize: '0.85rem', 
-            lineHeight: 1.6, 
-            minHeight: '250px', 
-            maxHeight: '250px', 
-            overflow: 'auto',
-            fontFamily: 'monospace',
-            letterSpacing: '0.05em'
-          }}
+          className="boot-terminal-content"
         >
           {/* Terminal History */}
           {terminalHistory.map((item, index) => (
@@ -410,14 +367,8 @@ export default function SystemBootSequence({ onComplete }) {
 
         {/* Progress Bar */}
         <motion.div
-          style={{
-            marginTop: '30px',
-            height: '4px',
-            background: 'rgba(74, 222, 128, 0.2)',
-            borderRadius: '2px',
-            overflow: 'hidden',
-            border: '2px solid var(--accent-cyan)',
-          }}
+          className="boot-progress-bar"
+          style={{ marginTop: '30px' }}
           initial={{ width: 0 }}
           animate={{ 
             width: '100%',
@@ -492,14 +443,8 @@ export default function SystemBootSequence({ onComplete }) {
 
       {/* Radar Effect */}
       <motion.div
-        style={{
-          position: 'absolute',
-          width: '400px',
-          height: '400px',
-          border: '1px solid rgba(74, 222, 128, 0.1)',
-          borderRadius: '50%',
-          pointerEvents: 'none',
-        }}
+        className="boot-radar"
+        style={{ width: '400px', height: '400px' }}
         animate={{
           scale: [1, 1.5, 1],
           opacity: [0.3, 0, 0.3],
@@ -511,14 +456,8 @@ export default function SystemBootSequence({ onComplete }) {
         }}
       />
       <motion.div
-        style={{
-          position: 'absolute',
-          width: '300px',
-          height: '300px',
-          border: '1px solid rgba(74, 222, 128, 0.2)',
-          borderRadius: '50%',
-          pointerEvents: 'none',
-        }}
+        className="boot-radar"
+        style={{ width: '300px', height: '300px' }}
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.4, 0, 0.4],
@@ -533,14 +472,7 @@ export default function SystemBootSequence({ onComplete }) {
 
       {/* Binary Code */}
       <motion.div
-        style={{
-          position: 'absolute',
-          bottom: '40px',
-          fontFamily: 'monospace',
-          fontSize: '10px',
-          color: 'rgba(74, 222, 128, 0.4)',
-          letterSpacing: '0.2em',
-        }}
+        className="boot-binary"
         animate={{
           opacity: [0.3, 0.7, 0.3],
         }}

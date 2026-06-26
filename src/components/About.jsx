@@ -64,6 +64,7 @@ export default function About() {
 
   return (
     <motion.div
+      className="about-container"
       initial={{ opacity: 0, scaleY: 0 }}
       animate={{
         opacity: 1,
@@ -73,72 +74,32 @@ export default function About() {
         scaleY: { duration: 0.3, ease: 'easeOut' },
         opacity: { duration: 0.2 },
       }}
-      style={{
-        transformOrigin: 'center center',
-        padding: '40px',
-        background: 'rgba(0, 0, 0, 0.95)',
-        border: '2px solid #4ade80',
-        borderRadius: 0,
-        maxWidth: '900px',
-        margin: '20px auto',
-        boxShadow: '0 0 30px rgba(74, 222, 128, 0.3)',
-        position: 'relative',
-        display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden',
-      }}
     >
       {/* Navigation Buttons - Sticky at top */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '20px',
-        marginBottom: '20px',
-        width: '100%',
-        position: 'sticky',
-        top: 0,
-        background: 'rgba(0, 0, 0, 0.95)',
-        padding: '10px 0',
-        zIndex: 20,
-      }}>
+      <div className="about-header">
         <button
           onClick={() => setCurrentCard(prev => Math.max(0, prev - 1))}
           disabled={currentCard === 0}
+          className="about-nav-btn"
           style={{
-            padding: '10px 20px',
             background: currentCard === 0 ? 'rgba(74, 222, 128, 0.1)' : 'rgba(74, 222, 128, 0.2)',
-            border: '1px solid #4ade80',
             color: currentCard === 0 ? '#4ade80' : '#ffffff',
-            borderRadius: 0,
             cursor: currentCard === 0 ? 'not-allowed' : 'pointer',
-            fontFamily: 'monospace',
-            fontSize: '14px',
-            transition: 'all 0.2s ease',
           }}
         >
           ◄ PREV
         </button>
-        <span style={{
-          padding: '10px 20px',
-          color: '#4ade80',
-          fontFamily: 'monospace',
-          fontSize: '14px',
-        }}>
+        <span className="about-nav-counter">
           {currentCard + 1} / {sections.length}
         </span>
         <button
           onClick={() => setCurrentCard(prev => Math.min(sections.length - 1, prev + 1))}
           disabled={currentCard === sections.length - 1}
+          className="about-nav-btn"
           style={{
-            padding: '10px 20px',
             background: currentCard === sections.length - 1 ? 'rgba(74, 222, 128, 0.1)' : 'rgba(74, 222, 128, 0.2)',
-            border: '1px solid #4ade80',
             color: currentCard === sections.length - 1 ? '#4ade80' : '#ffffff',
-            borderRadius: 0,
             cursor: currentCard === sections.length - 1 ? 'not-allowed' : 'pointer',
-            fontFamily: 'monospace',
-            fontSize: '14px',
-            transition: 'all 0.2s ease',
           }}
         >
           NEXT ►
@@ -146,20 +107,7 @@ export default function About() {
       </div>
 
       {/* Content - Scrollable */}
-      <div style={{ 
-        position: 'relative',
-        zIndex: 10,
-        color: '#ffffff', 
-        fontFamily: 'monospace', 
-        lineHeight: '1.8', 
-        overflowY: 'auto',
-        flex: 1,
-        maxHeight: '70vh',
-        paddingRight: '10px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}>
+      <div className="about-content">
         {/* Current Card */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -177,22 +125,10 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.3 }}
-              style={{
-                marginBottom: '20px',
-                padding: '20px',
-                background: 'rgba(0, 0, 0, 0.8)',
-                border: '1px solid rgba(74, 222, 128, 0.3)',
-                borderRadius: 0,
-                position: 'relative',
-                transition: 'all 0.2s ease',
-              }}
+              className="about-card"
             >
               {/* Section Header */}
-              <div style={{
-                marginBottom: '12px',
-                paddingBottom: '8px',
-                borderBottom: '1px solid #4ade80',
-              }}>
+              <div className="about-section-header">
                 <h3
                   style={{
                     fontSize: '1.2rem',
