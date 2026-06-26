@@ -713,14 +713,6 @@ function App() {
                       paddingRight: '15px',
                       position: 'relative',
                     }}>
-                      <div style={{
-                        position: 'absolute',
-                        left: '19px',
-                        top: '0',
-                        bottom: '0',
-                        width: '2px',
-                        background: 'linear-gradient(180deg, #4ade80 0%, rgba(74, 222, 128, 0.2) 100%)',
-                      }} />
                       {experiences.map((exp, index) => (
                         <motion.div
                           key={exp.id}
@@ -729,33 +721,9 @@ function App() {
                           transition={{ delay: index * 0.05, duration: 0.3 }}
                           style={{
                             position: 'relative',
-                            paddingLeft: '45px',
                             paddingBottom: index === experiences.length - 1 ? '0' : '24px',
                           }}
                         >
-                          <motion.div
-                            style={{
-                              position: 'absolute',
-                              left: '12px',
-                              top: '8px',
-                              width: '16px',
-                              height: '16px',
-                              borderRadius: '50%',
-                              background: expandedExperience[exp.id] ? '#4ade80' : 'rgba(74, 222, 128, 0.3)',
-                              border: '2px solid #4ade80',
-                              zIndex: 1,
-                              cursor: 'pointer',
-                            }}
-                            whileHover={{ scale: 1.2 }}
-                            onClick={() => {
-                              const isCurrentlyExpanded = expandedExperience[exp.id];
-                              const newExpanded = {};
-                              if (!isCurrentlyExpanded) {
-                                newExpanded[exp.id] = true;
-                              }
-                              setExpandedExperience(newExpanded);
-                            }}
-                          />
                           <div
                             style={{
                               background: expandedExperience[exp.id] ? 'rgba(74, 222, 128, 0.1)' : 'rgba(74, 222, 128, 0.03)',
@@ -983,14 +951,6 @@ function App() {
                       paddingRight: '15px',
                       position: 'relative',
                     }}>
-                      <div style={{
-                        position: 'absolute',
-                        left: '19px',
-                        top: '0',
-                        bottom: '0',
-                        width: '2px',
-                        background: 'linear-gradient(180deg, #4ade80 0%, rgba(74, 222, 128, 0.2) 100%)',
-                      }} />
                       
                       <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -998,26 +958,9 @@ function App() {
                         transition={{ delay: 0.2, duration: 0.3 }}
                         style={{
                           position: 'relative',
-                          paddingLeft: '45px',
                           paddingBottom: '24px',
                         }}
                       >
-                        <motion.div
-                          style={{
-                            position: 'absolute',
-                            left: '12px',
-                            top: '8px',
-                            width: '16px',
-                            height: '16px',
-                            borderRadius: '50%',
-                            background: expandedProject.coderpod ? '#4ade80' : 'rgba(74, 222, 128, 0.3)',
-                            border: '2px solid #4ade80',
-                            zIndex: 1,
-                            cursor: 'pointer',
-                          }}
-                          whileHover={{ scale: 1.2 }}
-                          onClick={() => setExpandedProject(prev => ({ ...prev, coderpod: !prev.coderpod }))}
-                        />
                         <div
                           style={{
                             background: expandedProject.coderpod ? 'rgba(74, 222, 128, 0.1)' : 'rgba(74, 222, 128, 0.03)',
@@ -1791,33 +1734,9 @@ function App() {
                           transition={{ delay: index * 0.05, duration: 0.3 }}
                           style={{
                             position: 'relative',
-                            paddingLeft: '45px',
                             paddingBottom: index === 6 ? '0' : '24px',
                           }}
                         >
-                          <motion.div
-                            style={{
-                              position: 'absolute',
-                              left: '12px',
-                              top: '8px',
-                              width: '16px',
-                              height: '16px',
-                              borderRadius: '50%',
-                              background: expandedTestimonial[index] ? '#4ade80' : 'rgba(74, 222, 128, 0.3)',
-                              border: '2px solid #4ade80',
-                              zIndex: 1,
-                              cursor: 'pointer',
-                            }}
-                            whileHover={{ scale: 1.2 }}
-                            onClick={() => {
-                              const isCurrentlyExpanded = expandedTestimonial[index];
-                              const newExpanded = {};
-                              if (!isCurrentlyExpanded) {
-                                newExpanded[index] = true;
-                              }
-                              setExpandedTestimonial(newExpanded);
-                            }}
-                          />
                           <motion.div
                             style={{
                               background: expandedTestimonial[index] ? 'rgba(74, 222, 128, 0.1)' : 'rgba(74, 222, 128, 0.05)',
