@@ -1683,15 +1683,15 @@ function App() {
                   style={{
                     transformOrigin: 'center center',
                     width: '100%',
-                    maxWidth: '900px',
+                    maxWidth: '1200px',
                     margin: '0 auto',
                   }}
                 >
                   <div className="section-container" style={{
-                    maxHeight: '80vh',
+                    maxHeight: 'auto',
                   }}>
                     <div className="section-content" style={{
-                      paddingRight: '10px',
+                      paddingRight: '0',
                     }}>
                       <h3 className="section-header recognition-header-mobile">
                         <span>[RECOGNITION] - TESTIMONIALS & ACHIEVEMENTS</span>
