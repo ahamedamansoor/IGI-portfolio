@@ -18,8 +18,10 @@ function App() {
   const [audioStarted, setAudioStarted] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [glitchCharsState, setGlitchCharsState] = useState({});
-  const [expandedExperience, setExpandedExperience] = useState({});
+  const [expandedExperience, setExpandedExperience] = useState({ 1: true });
   const [expandedProject, setExpandedProject] = useState({ coderpod: true });
+  const [expandedTestimonial, setExpandedTestimonial] = useState({});
+  const [expandedAchievement, setExpandedAchievement] = useState({});
   const audioRef = useRef(null);
 
   // Experience data
@@ -202,13 +204,17 @@ function App() {
           background: 'rgba(0, 0, 0, 0.8)',
           border: '2px solid #4ade80',
           color: '#4ade80',
-          padding: '10px 15px',
+          padding: '10px',
           fontFamily: 'monospace',
-          fontSize: '12px',
+          fontSize: '16px',
           cursor: 'pointer',
-          textTransform: 'uppercase',
           fontWeight: 'bold',
           transition: 'all 0.3s ease',
+          width: '40px',
+          height: '40px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
         onMouseEnter={(e) => {
           e.target.style.background = '#4ade80';
@@ -219,7 +225,7 @@ function App() {
           e.target.style.color = '#4ade80';
         }}
       >
-        {!audioStarted || audioRef?.current?.paused ? '▶ MUSIC ON' : '■ MUSIC OFF'}
+        {!audioStarted || audioRef?.current?.paused ? '▶' : '■'}
       </button>
       
       <AnimatePresence mode="wait">
@@ -536,7 +542,9 @@ function App() {
                   }}
                 >
                   <div className="section-container expertise-container-mobile" style={{
-                    minWidth: '900px',
+                    maxWidth: '1200px',
+                    width: '100%',
+                    margin: '0 auto',
                   }}>
                   <h3 className="section-header expertise-header-mobile" style={{
                     marginBottom: '20px',
@@ -545,8 +553,12 @@ function App() {
                   </h3>
                   <div className="expertise-content-mobile" style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-                    gap: '10px',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
+                    gap: '12px',
+                    height: 'auto',
+                    maxHeight: '65vh',
+                    overflowY: 'auto',
+                    paddingRight: '15px',
                   }}>
                     {['HTML5', 'CSS3', 'SASS', 'JavaScript ES6', 'TypeScript', 'Angular 8-19', 'React', 'Next.js', 'RxJS', 'Bootstrap', 'D3.js', 'AG-Grid', 'SVG', 'Canvas', 'Node.js', 'Go Lang', 'REST API', 'Jenkins', 'SonarQube', 'Playwright', 'Jasmine', 'Git', 'Azure', 'Webpack', 'Figma', 'Pixel Perfect Pro'].map((skill, skillIndex) => {
                       const skillPercentages = {
@@ -659,202 +671,243 @@ function App() {
                   }}
                 >
                   <div className="experience-container-mobile" style={{
-                    padding: '40px',
+                    padding: '30px',
                     background: 'rgba(0, 0, 0, 0.95)',
                     border: '2px solid #4ade80',
                     borderRadius: 0,
-                    maxWidth: '900px',
+                    maxWidth: '1200px',
                     width: '100%',
                     margin: '20px auto',
                     boxShadow: '0 0 30px rgba(74, 222, 128, 0.3)',
                     position: 'relative',
                     display: 'flex',
                     flexDirection: 'column',
-                    overflow: 'hidden',
+                    overflow: 'visible',
+                    maxHeight: '85vh',
                   }}>
                     <h3 className="section-header experience-header-mobile" style={{
-                      marginBottom: '30px',
+                      marginBottom: '25px',
                     }}>
                       <span>[EXPERIENCE] - MISSION HISTORY</span>
                       <motion.span
                         animate={{ opacity: [0.5, 1, 0.5] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
                         style={{
-                          fontSize: '0.8rem',
+                          fontSize: '0.75rem',
                           color: '#22c55e',
                         }}
                       >
-                        ● ACTIVE
+                        ● LIVE
                       </motion.span>
                     </h3>
 
                     <div className="experience-content-mobile" style={{
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '20px',
-                      maxHeight: '60vh',
+                      gap: '0',
+                      height: 'auto',
+                      maxHeight: '65vh',
                       overflowY: 'auto',
-                      paddingRight: '10px',
+                      paddingRight: '15px',
+                      position: 'relative',
                     }}>
+                      <div style={{
+                        position: 'absolute',
+                        left: '19px',
+                        top: '0',
+                        bottom: '0',
+                        width: '2px',
+                        background: 'linear-gradient(180deg, #4ade80 0%, rgba(74, 222, 128, 0.2) 100%)',
+                      }} />
                       {experiences.map((exp, index) => (
                         <motion.div
                           key={exp.id}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.1, duration: 0.5 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
                           style={{
-                            background: 'rgba(74, 222, 128, 0.05)',
-                            border: '1px solid rgba(74, 222, 128, 0.3)',
-                            borderRadius: 0,
-                            padding: '20px',
                             position: 'relative',
-                            overflow: 'hidden',
-                            transition: 'all 0.3s ease',
+                            paddingLeft: '45px',
+                            paddingBottom: index === experiences.length - 1 ? '0' : '24px',
                           }}
                         >
                           <motion.div
                             style={{
                               position: 'absolute',
-                              top: 0,
-                              left: 0,
-                              width: '4px',
-                              height: '100%',
-                              background: 'linear-gradient(180deg, #4ade80, #22c55e)',
+                              left: '12px',
+                              top: '8px',
+                              width: '16px',
+                              height: '16px',
+                              borderRadius: '50%',
+                              background: expandedExperience[exp.id] ? '#4ade80' : 'rgba(74, 222, 128, 0.3)',
+                              border: '2px solid #4ade80',
+                              zIndex: 1,
+                              cursor: 'pointer',
+                            }}
+                            whileHover={{ scale: 1.2 }}
+                            onClick={() => {
+                              const isCurrentlyExpanded = expandedExperience[exp.id];
+                              const newExpanded = {};
+                              if (!isCurrentlyExpanded) {
+                                newExpanded[exp.id] = true;
+                              }
+                              setExpandedExperience(newExpanded);
                             }}
                           />
-                          <div style={{
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          cursor: 'pointer',
-                          marginBottom: '15px',
-                        }}
-                        onClick={() => setExpandedExperience(prev => ({ ...prev, [exp.id]: !prev[exp.id] }))}
-                      >
-                            <h4 style={{
-                              fontSize: '1.2rem',
-                              color: '#4ade80',
-                              fontFamily: 'monospace',
-                              fontWeight: '700',
-                              marginBottom: '5px',
+                          <div
+                            style={{
+                              background: expandedExperience[exp.id] ? 'rgba(74, 222, 128, 0.1)' : 'rgba(74, 222, 128, 0.03)',
+                              border: expandedExperience[exp.id] ? '1px solid #4ade80' : '1px solid rgba(74, 222, 128, 0.2)',
+                              borderRadius: '8px',
+                              padding: '12px 24px',
+                              cursor: 'pointer',
+                              transition: 'all 0.3s ease',
+                            }}
+                            onClick={() => {
+                              const isCurrentlyExpanded = expandedExperience[exp.id];
+                              const newExpanded = {};
+                              if (!isCurrentlyExpanded) {
+                                newExpanded[exp.id] = true;
+                              }
+                              setExpandedExperience(newExpanded);
+                            }}
+                          >
+                            <div style={{
+                              display: 'flex',
+                              justifyContent: 'space-between',
+                              alignItems: 'center',
+                              marginBottom: expandedExperience[exp.id] ? '12px' : '0',
                             }}>
-                              {exp.title}
-                            </h4>
-                            <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                              <div style={{
-                              fontSize: '0.7rem',
-                              color: '#22c55e',
-                              fontFamily: 'monospace',
-                              fontWeight: '600',
-                              background: 'rgba(34, 197, 94, 0.1)',
-                              padding: '3px 8px',
-                              border: '1px solid rgba(34, 197, 94, 0.3)',
-                            }}>
-                                {exp.status}
+                              <div style={{ flex: 1 }}>
+                                <h4 style={{
+                                  fontSize: '1rem',
+                                  color: '#4ade80',
+                                  fontFamily: 'monospace',
+                                  fontWeight: '700',
+                                  marginBottom: '4px',
+                                }}>
+                                  {exp.title}
+                                </h4>
+                                <div style={{
+                                  fontSize: '0.85rem',
+                                  color: '#c0c0c0',
+                                  fontFamily: 'monospace',
+                                }}>
+                                  {exp.company}
+                                </div>
+                                <div style={{
+                                  fontSize: '0.75rem',
+                                  color: '#888',
+                                  fontFamily: 'monospace',
+                                  marginTop: '2px',
+                                }}>
+                                  {exp.location} | {exp.date}
+                                </div>
                               </div>
                               <motion.div
                                 animate={{ rotate: expandedExperience[exp.id] ? 180 : 0 }}
                                 transition={{ duration: 0.2 }}
                                 style={{
-                                  fontSize: '1rem',
+                                  fontSize: '0.8rem',
                                   color: '#4ade80',
                                   fontWeight: '700',
+                                  marginLeft: '12px',
                                 }}
                               >
                                 ▼
                               </motion.div>
                             </div>
-                          </div>
 
-                          <AnimatePresence>
-                            {expandedExperience[exp.id] && (
-                              <motion.div
-                                initial={{ opacity: 0, height: 0 }}
-                                animate={{ opacity: 1, height: 'auto' }}
-                                exit={{ opacity: 0, height: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="expanded-content"
-                              >
-                                <div style={{
-                                  fontSize: '1rem',
-                                  color: '#c0c0c0',
-                                  fontFamily: 'monospace',
-                                  marginBottom: '5px',
-                                }}>
-                                  {exp.company}
-                                </div>
-                                <div style={{
-                                  fontSize: '0.9rem',
-                                  color: '#888',
-                                  fontFamily: 'monospace',
-                                  marginBottom: '15px',
-                                }}>
-                                  {exp.location && `${exp.location} | `}{exp.date}
-                                </div>
-                                {exp.promotion && (
+                            <AnimatePresence>
+                              {expandedExperience[exp.id] && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  style={{
+                                    borderTop: '1px solid rgba(74, 222, 128, 0.2)',
+                                    paddingTop: '12px',
+                                    marginTop: '8px',
+                                  }}
+                                >
+                                  {exp.promotion && (
+                                    <div style={{
+                                      fontSize: '0.8rem',
+                                      color: '#22c55e',
+                                      fontFamily: 'monospace',
+                                      marginBottom: '10px',
+                                      fontWeight: '600',
+                                      background: 'rgba(34, 197, 94, 0.1)',
+                                      padding: '6px 10px',
+                                      borderRadius: '4px',
+                                    }}>
+                                      ► {exp.promotion}
+                                    </div>
+                                  )}
+                                  {exp.project && (
+                                    <div style={{
+                                      fontSize: '0.85rem',
+                                      color: '#4ade80',
+                                      fontFamily: 'monospace',
+                                      marginBottom: '10px',
+                                      fontWeight: '600',
+                                    }}>
+                                      PROJECT: {exp.project}
+                                    </div>
+                                  )}
                                   <div style={{
-                                    fontSize: '0.85rem',
-                                    color: '#22c55e',
-                                    fontFamily: 'monospace',
-                                    marginBottom: '15px',
-                                    fontWeight: '600',
-                                    background: 'rgba(34, 197, 94, 0.1)',
-                                    padding: '8px 12px',
-                                    borderLeft: '3px solid #22c55e',
-                                  }}>
-                                    ► {exp.promotion}
-                                  </div>
-                                )}
-                                {exp.project && (
-                                  <div style={{
-                                    fontSize: '0.95rem',
+                                    fontSize: '0.8rem',
                                     color: '#4ade80',
                                     fontFamily: 'monospace',
-                                    marginBottom: '15px',
-                                    fontWeight: '600',
-                                  }}>
-                                    PROJECT: {exp.project}
-                                  </div>
-                                )}
-                                <div style={{
-                                  fontSize: '0.85rem',
-                                  color: '#4ade80',
-                                  fontFamily: 'monospace',
-                                  marginBottom: '10px',
-                                  fontWeight: '600',
-                                }}>
-                                  <div style={{
-                                    fontSize: '0.85rem',
-                                    color: '#4ade80',
-                                    fontFamily: 'monospace',
-                                    marginBottom: '10px',
+                                    marginBottom: '8px',
                                     fontWeight: '600',
                                   }}>
                                     ► KEY ACHIEVEMENTS:
                                   </div>
                                   <ul style={{
                                     margin: 0,
-                                    paddingLeft: '20px',
+                                    paddingLeft: '18px',
                                     color: '#c0c0c0',
+                                    fontSize: '0.8rem',
+                                    fontFamily: 'monospace',
                                   }}>
                                     {exp.achievements.map((achievement, i) => (
                                       <li key={i} style={{
-                                        marginBottom: '6px',
-                                        lineHeight: '1.5',
+                                        marginBottom: '4px',
+                                        lineHeight: '1.4',
                                       }}>
                                         {achievement}
                                       </li>
                                     ))}
                                   </ul>
-                                </div>
-                                {exp.technologies && (
-                                  <div style={{ marginTop: '10px' }}>
-                                    <span style={{ color: '#4ade80', fontWeight: '600' }}>TECHNOLOGIES:</span> {exp.technologies}
-                                  </div>
-                                )}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
+                                  {exp.tech && exp.tech.length > 0 && (
+                                    <div style={{
+                                      display: 'flex',
+                                      gap: '6px',
+                                      flexWrap: 'wrap',
+                                      marginTop: '10px',
+                                    }}>
+                                      {exp.tech.map((tech, i) => (
+                                        <span key={tech} style={{
+                                          fontSize: '0.7rem',
+                                          color: '#22c55e',
+                                          fontFamily: 'monospace',
+                                          background: 'rgba(34, 197, 94, 0.12)',
+                                          padding: '2px 8px',
+                                          border: '1px solid rgba(34, 197, 94, 0.3)',
+                                          borderRadius: '4px',
+                                          fontWeight: '600',
+                                        }}>
+                                          {tech}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  )}
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
                         </motion.div>
                       ))}
                     </div>
@@ -887,69 +940,122 @@ function App() {
                     transformOrigin: 'center center',
                   }}
                 >
-                  <div className="projects-container">
+                  <div className="projects-container" style={{
+                    padding: '30px',
+                    background: 'rgba(0, 0, 0, 0.95)',
+                    border: '2px solid #4ade80',
+                    borderRadius: 0,
+                    maxWidth: '1200px',
+                    width: '100%',
+                    margin: '20px auto',
+                    boxShadow: '0 0 30px rgba(74, 222, 128, 0.3)',
+                    position: 'relative',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    overflow: 'visible',
+                    maxHeight: '85vh',
+                  }}>
                     <h3 className="section-header" style={{
-                      marginBottom: '30px',
+                      marginBottom: '25px',
                     }}>
                       <span>[PROJECTS] - MISSION PROTOCOLS</span>
                       <motion.span
                         animate={{ opacity: [0.5, 1, 0.5] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
                         style={{
-                          fontSize: '0.8rem',
+                          fontSize: '0.75rem',
                           color: '#22c55e',
                         }}
                       >
                         ● LIVE
                       </motion.span>
                     </h3>
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2, duration: 0.5 }}
-                      className="projects-card"
-                    >
+
+                    <div style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0',
+                      height: 'auto',
+                      maxHeight: '65vh',
+                      overflowY: 'auto',
+                      paddingRight: '15px',
+                      position: 'relative',
+                    }}>
+                      <div style={{
+                        position: 'absolute',
+                        left: '19px',
+                        top: '0',
+                        bottom: '0',
+                        width: '2px',
+                        background: 'linear-gradient(180deg, #4ade80 0%, rgba(74, 222, 128, 0.2) 100%)',
+                      }} />
+                      
                       <motion.div
-                        className="projects-card-accent"
-                      />
-                      <div className="projects-header">
-                        <div>
-                          <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            marginBottom: '10px',
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2, duration: 0.3 }}
+                        style={{
+                          position: 'relative',
+                          paddingLeft: '45px',
+                          paddingBottom: '24px',
+                        }}
+                      >
+                        <motion.div
+                          style={{
+                            position: 'absolute',
+                            left: '12px',
+                            top: '8px',
+                            width: '16px',
+                            height: '16px',
+                            borderRadius: '50%',
+                            background: expandedProject.coderpod ? '#4ade80' : 'rgba(74, 222, 128, 0.3)',
+                            border: '2px solid #4ade80',
+                            zIndex: 1,
                             cursor: 'pointer',
                           }}
+                          whileHover={{ scale: 1.2 }}
                           onClick={() => setExpandedProject(prev => ({ ...prev, coderpod: !prev.coderpod }))}
-                          >
-                            <motion.div
-                              animate={{ rotate: [0, 360] }}
-                              transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                              style={{
-                                width: '30px',
-                                height: '30px',
-                                border: '2px solid #4ade80',
-                                borderRadius: '50%',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '14px',
-                              }}
-                            >
-                              ⚡
-                            </motion.div>
-                            <h4 className="projects-title">
-                              CoderPod.org
-                            </h4>
+                        />
+                        <div
+                          style={{
+                            background: expandedProject.coderpod ? 'rgba(74, 222, 128, 0.1)' : 'rgba(74, 222, 128, 0.03)',
+                            border: expandedProject.coderpod ? '1px solid #4ade80' : '1px solid rgba(74, 222, 128, 0.2)',
+                            borderRadius: '8px',
+                            padding: '12px 24px',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s ease',
+                          }}
+                          onClick={() => setExpandedProject(prev => ({ ...prev, coderpod: !prev.coderpod }))}
+                        >
+                          <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            marginBottom: expandedProject.coderpod ? '12px' : '0',
+                          }}>
+                            <div style={{ flex: 1 }}>
+                              <h4 className="projects-title" style={{
+                                fontSize: '1rem',
+                                marginBottom: '4px',
+                              }}>
+                                CoderPod.org
+                              </h4>
+                              <p className="projects-description" style={{
+                                fontSize: '0.85rem',
+                                color: '#c0c0c0',
+                                marginBottom: '2px',
+                              }}>
+                                AI-powered coding platform for developers
+                              </p>
+                            </div>
                             <motion.div
                               animate={{ rotate: expandedProject.coderpod ? 180 : 0 }}
                               transition={{ duration: 0.2 }}
                               style={{
-                                fontSize: '1rem',
+                                fontSize: '0.8rem',
                                 color: '#4ade80',
                                 fontWeight: '700',
-                                marginLeft: '10px',
+                                marginLeft: '12px',
                               }}
                             >
                               ▼
@@ -963,126 +1069,83 @@ function App() {
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="expanded-content"
+                                style={{
+                                  borderTop: '1px solid rgba(74, 222, 128, 0.2)',
+                                  paddingTop: '12px',
+                                  marginTop: '8px',
+                                }}
                               >
-                          <p className="projects-description">
-                            Built full-stack AI-powered coding platform for developers using Next.js and agentic AI tools (Claude, Codex, Windsurf).
-                          </p>
-                          <div style={{
-                            display: 'flex',
-                            gap: '10px',
-                            flexWrap: 'wrap',
-                            marginBottom: '15px',
-                          }}>
-                            {['Next.js', 'React', 'TypeScript', 'Node.js', 'Claude', 'GitHub Copilot', 'Windsurf', 'SVG', 'Canvas', 'Figma'].map((tech, i) => (
-                              <motion.span
-                                key={tech}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.3 + i * 0.1, duration: 0.3 }}
-                                className="projects-tech-tag"
-                              >
-                                {tech}
-                              </motion.span>
-                            ))}
-                          </div>
+                                <p className="projects-description" style={{
+                                  fontSize: '0.8rem',
+                                  color: '#c0c0c0',
+                                  marginBottom: '10px',
+                                }}>
+                                  Built full-stack AI-powered coding platform for developers using Next.js and agentic AI tools (Claude, Codex, Windsurf).
+                                </p>
+                                <div style={{
+                                  display: 'flex',
+                                  gap: '6px',
+                                  flexWrap: 'wrap',
+                                  marginBottom: '10px',
+                                }}>
+                                  {['Next.js', 'React', 'TypeScript', 'Node.js', 'Claude', 'GitHub Copilot', 'Windsurf', 'SVG', 'Canvas', 'Figma'].map((tech, i) => (
+                                    <span key={tech} style={{
+                                      fontSize: '0.7rem',
+                                      color: '#22c55e',
+                                      fontFamily: 'monospace',
+                                      background: 'rgba(34, 197, 94, 0.12)',
+                                      padding: '2px 8px',
+                                      border: '1px solid rgba(34, 197, 94, 0.3)',
+                                      borderRadius: '4px',
+                                      fontWeight: '600',
+                                    }}>
+                                      {tech}
+                                    </span>
+                                  ))}
+                                </div>
+                                <motion.div
+                                  initial={{ opacity: 0, scale: 0.8 }}
+                                  animate={{ opacity: 1, scale: 1 }}
+                                  transition={{ delay: 0.1, duration: 0.3 }}
+                                >
+                                  <a
+                                    href="https://coderpod.org"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="projects-access-btn"
+                                    style={{
+                                      display: 'inline-block',
+                                      padding: '8px 16px',
+                                      background: 'linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 197, 94, 0.2))',
+                                      color: '#4ade80',
+                                      textDecoration: 'none',
+                                      borderRadius: '4px',
+                                      fontSize: '0.85rem',
+                                      fontWeight: '600',
+                                      fontFamily: 'monospace',
+                                      transition: 'all 0.3s ease',
+                                      border: '1px solid rgba(74, 222, 128, 0.3)',
+                                    }}
+                                    onMouseEnter={(e) => {
+                                      e.target.style.background = '#4ade80';
+                                      e.target.style.color = 'black';
+                                      e.target.style.transform = 'scale(1.05)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                      e.target.style.background = 'linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 197, 94, 0.2))';
+                                      e.target.style.color = '#4ade80';
+                                      e.target.style.transform = 'scale(1)';
+                                    }}
+                                  >
+                                    ACCESS PROJECT
+                                  </a>
+                                </motion.div>
                               </motion.div>
                             )}
                           </AnimatePresence>
                         </div>
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.4, duration: 0.4 }}
-                        >
-                          <a
-                            href="https://coderpod.org"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="projects-access-btn"
-                            onMouseEnter={(e) => {
-                              e.target.style.background = '#4ade80';
-                              e.target.style.color = 'black';
-                              e.target.style.transform = 'scale(1.05)';
-                            }}
-                            onMouseLeave={(e) => {
-                              e.target.style.background = 'linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 197, 94, 0.2))';
-                              e.target.style.color = '#4ade80';
-                              e.target.style.transform = 'scale(1)';
-                            }}
-                          >
-                            <span>ACCESS</span>
-                            <motion.span
-                              animate={{ x: [0, 5, 0] }}
-                              transition={{ duration: 1, repeat: Infinity, ease: 'easeInOut' }}
-                              style={{ fontSize: '16px' }}
-                            >
-                              →
-                            </motion.span>
-                          </a>
-                        </motion.div>
-                      </div>
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: '100%' }}
-                        transition={{ delay: 0.5, duration: 1 }}
-                        style={{
-                          position: 'absolute',
-                          bottom: 0,
-                          left: 0,
-                          height: '2px',
-                          background: 'linear-gradient(90deg, transparent, #4ade80, transparent)',
-                        }}
-                      />
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.6, duration: 0.5 }}
-                      style={{
-                        marginTop: '20px',
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(3, 1fr)',
-                        gap: '15px',
-                      }}
-                    >
-                      {[
-                        { label: 'STATUS', value: 'ACTIVE', color: '#4ade80' },
-                        { label: 'VERSION', value: 'v2.0', color: '#22c55e' },
-                        { label: 'UPTIME', value: '99.9%', color: '#16a34a' }
-                      ].map((stat, i) => (
-                        <motion.div
-                          key={stat.label}
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.7 + i * 0.1, duration: 0.3 }}
-                          style={{
-                            background: 'rgba(0, 0, 0, 0.6)',
-                            border: '1px solid rgba(74, 222, 128, 0.2)',
-                            borderRadius: 0,
-                            padding: '12px',
-                            textAlign: 'center',
-                          }}
-                        >
-                          <div style={{
-                            fontSize: '0.7rem',
-                            color: '#888',
-                            fontFamily: 'monospace',
-                            marginBottom: '5px',
-                          }}>
-                            {stat.label}
-                          </div>
-                          <div style={{
-                            fontSize: '1rem',
-                            color: stat.color,
-                            fontFamily: 'monospace',
-                            fontWeight: 'bold',
-                          }}>
-                            {stat.value}
-                          </div>
-                        </motion.div>
-                      ))}
-                    </motion.div>
+                      </motion.div>
+                    </div>
                   </div>
                 </motion.div>
               ) : selectedMission && selectedMission.name === 'CONTACT' ? (
@@ -1111,7 +1174,7 @@ function App() {
                   style={{
                     transformOrigin: 'center center',
                     width: '100%',
-                    maxWidth: '900px',
+                    maxWidth: '1200px',
                     margin: '0 auto',
                   }}
                 >
@@ -1629,9 +1692,7 @@ function App() {
                     <div className="section-content" style={{
                       paddingRight: '10px',
                     }}>
-                      <h3 className="section-header recognition-header-mobile" style={{
-                        marginBottom: '25px',
-                      }}>
+                      <h3 className="section-header recognition-header-mobile">
                         <span>[RECOGNITION] - TESTIMONIALS & ACHIEVEMENTS</span>
                       <motion.span
                         animate={{ opacity: [0.5, 1, 0.5] }}
@@ -1645,20 +1706,31 @@ function App() {
                       </motion.span>
                     </h3>
 
-                    {/* Testimonials Section */}
-                    <div style={{ marginBottom: '30px' }}>
+                    {/* Testimonials and Achievements Section */}
+                    <div style={{
+                      height: 'auto',
+                      maxHeight: '70vh',
+                      overflowY: 'auto',
+                      paddingRight: '15px',
+                      position: 'relative',
+                    }}>
+                      {/* Testimonials Section */}
                       <div style={{
-                        fontSize: '1rem',
-                        color: '#4ade80',
-                        fontFamily: 'monospace',
-                        marginBottom: '15px',
-                        fontWeight: '600',
-                        letterSpacing: '0.1em',
+                        marginBottom: '30px',
                       }}>
-                        ► TESTIMONIALS
-                      </div>
-                      
-                      {[
+                        <div style={{
+                          fontSize: '1rem',
+                          color: '#4ade80',
+                          fontFamily: 'monospace',
+                          marginBottom: '15px',
+                          fontWeight: '600',
+                          letterSpacing: '0.1em',
+                        }}>
+                          ► TESTIMONIALS
+                        </div>
+
+                        
+                        {[
                         {
                           quote: "Thank you for responding to the AI Challenge and embracing the call to become skilled at the use of AI. By making AI a core part of how you work every day, you're not just raising the bar—you're inspiring those around you to think bigger and push boundaries. Your leadership shines as a true example of what it means to \"Think Really Big\" at Cisco. Cheers, Jeetu",
                           author: "Jeetu Patel",
@@ -1713,83 +1785,155 @@ function App() {
                           key={index}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: index * 0.1, duration: 0.5 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
                           style={{
-                            background: 'rgba(74, 222, 128, 0.05)',
-                            border: '1px solid rgba(74, 222, 128, 0.3)',
-                            borderRadius: 0,
-                            padding: '12px',
-                            marginBottom: '10px',
                             position: 'relative',
-                          }}
-                          whileHover={{
-                            borderColor: '#4ade80',
-                            boxShadow: '0 0 15px rgba(74, 222, 128, 0.2)',
+                            paddingLeft: '45px',
+                            paddingBottom: index === 6 ? '0' : '24px',
                           }}
                         >
-                          <div style={{
-                            fontSize: '0.8rem',
-                            color: '#c0c0c0',
-                            fontFamily: 'monospace',
-                            lineHeight: '1.5',
-                            fontStyle: 'italic',
-                            marginBottom: '10px',
-                            borderLeft: '3px solid #4ade80',
-                            paddingLeft: '12px',
-                          }}>
-                            "{testimonial.quote}"
-                          </div>
-                          <div style={{
-                            fontSize: '0.85rem',
-                            color: '#4ade80',
-                            fontFamily: 'monospace',
-                            fontWeight: '600',
-                            marginBottom: '2px',
-                          }}>
-                            {testimonial.author}
-                          </div>
-                          <div style={{
-                            fontSize: '0.75rem',
-                            color: '#888',
-                            fontFamily: 'monospace',
-                            marginBottom: '2px',
-                          }}>
-                            {testimonial.title}
-                          </div>
-                          <div style={{
-                            fontSize: '0.7rem',
-                            color: '#666',
-                            fontFamily: 'monospace',
-                          }}>
-                            {testimonial.company}
-                          </div>
-                          <div style={{
-                            fontSize: '0.7rem',
-                            color: '#22c55e',
-                            fontFamily: 'monospace',
-                            marginTop: '6px',
-                            fontWeight: '600',
-                          }}>
-                            ► {testimonial.context}
-                          </div>
+                          <motion.div
+                            style={{
+                              position: 'absolute',
+                              left: '12px',
+                              top: '8px',
+                              width: '16px',
+                              height: '16px',
+                              borderRadius: '50%',
+                              background: expandedTestimonial[index] ? '#4ade80' : 'rgba(74, 222, 128, 0.3)',
+                              border: '2px solid #4ade80',
+                              zIndex: 1,
+                              cursor: 'pointer',
+                            }}
+                            whileHover={{ scale: 1.2 }}
+                            onClick={() => {
+                              const isCurrentlyExpanded = expandedTestimonial[index];
+                              const newExpanded = {};
+                              if (!isCurrentlyExpanded) {
+                                newExpanded[index] = true;
+                              }
+                              setExpandedTestimonial(newExpanded);
+                            }}
+                          />
+                          <motion.div
+                            style={{
+                              background: expandedTestimonial[index] ? 'rgba(74, 222, 128, 0.1)' : 'rgba(74, 222, 128, 0.05)',
+                              border: expandedTestimonial[index] ? '1px solid #4ade80' : '1px solid rgba(74, 222, 128, 0.3)',
+                              borderRadius: '8px',
+                              padding: '12px 16px',
+                              position: 'relative',
+                              transition: 'all 0.3s ease',
+                              cursor: 'pointer',
+                            }}
+                            onClick={() => {
+                              const isCurrentlyExpanded = expandedTestimonial[index];
+                              const newExpanded = {};
+                              if (!isCurrentlyExpanded) {
+                                newExpanded[index] = true;
+                              }
+                              setExpandedTestimonial(newExpanded);
+                            }}
+                          >
+                            <div style={{
+                              display: 'flex',
+                              justifyContent: 'space-between',
+                              alignItems: 'center',
+                              marginBottom: expandedTestimonial[index] ? '10px' : '0',
+                            }}>
+                              <div style={{ flex: 1 }}>
+                                <div style={{
+                                  fontSize: '0.85rem',
+                                  color: '#4ade80',
+                                  fontFamily: 'monospace',
+                                  fontWeight: '600',
+                                  marginBottom: '2px',
+                                }}>
+                                  {testimonial.author}
+                                </div>
+                                <div style={{
+                                  fontSize: '0.7rem',
+                                  color: '#888',
+                                  fontFamily: 'monospace',
+                                }}>
+                                  {testimonial.title}
+                                </div>
+                              </div>
+                              <motion.div
+                                animate={{ rotate: expandedTestimonial[index] ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                                style={{
+                                  fontSize: '0.8rem',
+                                  color: '#4ade80',
+                                  fontWeight: '700',
+                                  marginLeft: '12px',
+                                }}
+                              >
+                                ▼
+                              </motion.div>
+                            </div>
+
+                            <AnimatePresence>
+                              {expandedTestimonial[index] && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  style={{
+                                    borderTop: '1px solid rgba(74, 222, 128, 0.2)',
+                                    paddingTop: '10px',
+                                    marginTop: '8px',
+                                  }}
+                                >
+                                  <div style={{
+                                    fontSize: '0.8rem',
+                                    color: '#c0c0c0',
+                                    fontFamily: 'monospace',
+                                    lineHeight: '1.5',
+                                    fontStyle: 'italic',
+                                    marginBottom: '8px',
+                                    borderLeft: '3px solid #4ade80',
+                                    paddingLeft: '12px',
+                                  }}>
+                                    "{testimonial.quote}"
+                                  </div>
+                                  <div style={{
+                                    fontSize: '0.7rem',
+                                    color: '#666',
+                                    fontFamily: 'monospace',
+                                    marginBottom: '6px',
+                                  }}>
+                                    {testimonial.company}
+                                  </div>
+                                  <div style={{
+                                    fontSize: '0.7rem',
+                                    color: '#22c55e',
+                                    fontFamily: 'monospace',
+                                    fontWeight: '600',
+                                  }}>
+                                    ► {testimonial.context}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </motion.div>
                         </motion.div>
                       ))}
-                    </div>
-
-                    {/* Achievements Section */}
-                    <div>
-                      <div style={{
-                        fontSize: '1rem',
-                        color: '#4ade80',
-                        fontFamily: 'monospace',
-                        marginBottom: '15px',
-                        fontWeight: '600',
-                        letterSpacing: '0.1em',
-                      }}>
-                        ► PROFESSIONAL ACHIEVEMENTS
                       </div>
-                      
-                      {[
+
+                      {/* Achievements Section */}
+                      <div>
+                        <div style={{
+                          fontSize: '1rem',
+                          color: '#4ade80',
+                          fontFamily: 'monospace',
+                          marginBottom: '15px',
+                          fontWeight: '600',
+                          letterSpacing: '0.1em',
+                        }}>
+                          ► PROFESSIONAL ACHIEVEMENTS
+                        </div>
+                        {[
                         {
                           title: "Great Impact - Infra-UI",
                           year: "2021 & 2022",
@@ -1807,63 +1951,134 @@ function App() {
                           key={index}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}
+                          transition={{ delay: index * 0.05, duration: 0.3 }}
                           style={{
-                            background: 'rgba(74, 222, 128, 0.1)',
-                            border: '1px solid rgba(74, 222, 128, 0.4)',
-                            borderRadius: 0,
-                            padding: '15px',
-                            marginBottom: '12px',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                          }}
-                          whileHover={{
-                            borderColor: '#4ade80',
-                            boxShadow: '0 0 15px rgba(74, 222, 128, 0.3)',
+                            position: 'relative',
+                            paddingLeft: '45px',
+                            paddingBottom: index === 1 ? '0' : '24px',
                           }}
                         >
-                          <div style={{ flex: 1 }}>
+                          <motion.div
+                            style={{
+                              position: 'absolute',
+                              left: '12px',
+                              top: '8px',
+                              width: '16px',
+                              height: '16px',
+                              borderRadius: '50%',
+                              background: expandedAchievement[index] ? '#4ade80' : 'rgba(74, 222, 128, 0.5)',
+                              border: '2px solid #4ade80',
+                              zIndex: 1,
+                              cursor: 'pointer',
+                            }}
+                            whileHover={{ scale: 1.2 }}
+                            onClick={() => {
+                              const isCurrentlyExpanded = expandedAchievement[index];
+                              const newExpanded = {};
+                              if (!isCurrentlyExpanded) {
+                                newExpanded[index] = true;
+                              }
+                              setExpandedAchievement(newExpanded);
+                            }}
+                          />
+                          <motion.div
+                            style={{
+                              background: expandedAchievement[index] ? 'rgba(74, 222, 128, 0.15)' : 'rgba(74, 222, 128, 0.1)',
+                              border: expandedAchievement[index] ? '1px solid #4ade80' : '1px solid rgba(74, 222, 128, 0.4)',
+                              borderRadius: '8px',
+                              padding: '12px 16px',
+                              position: 'relative',
+                              transition: 'all 0.3s ease',
+                              cursor: 'pointer',
+                            }}
+                            onClick={() => {
+                              const isCurrentlyExpanded = expandedAchievement[index];
+                              const newExpanded = {};
+                              if (!isCurrentlyExpanded) {
+                                newExpanded[index] = true;
+                              }
+                              setExpandedAchievement(newExpanded);
+                            }}
+                          >
                             <div style={{
-                              fontSize: '0.95rem',
-                              color: '#ffffff',
-                              fontFamily: 'monospace',
-                              fontWeight: '700',
-                              marginBottom: '4px',
+                              display: 'flex',
+                              justifyContent: 'space-between',
+                              alignItems: 'center',
+                              marginBottom: expandedAchievement[index] ? '10px' : '0',
                             }}>
-                              {achievement.title}
+                              <div style={{ flex: 1 }}>
+                                <div style={{
+                                  fontSize: '0.95rem',
+                                  color: '#ffffff',
+                                  fontFamily: 'monospace',
+                                  fontWeight: '700',
+                                  marginBottom: '2px',
+                                }}>
+                                  {achievement.title}
+                                </div>
+                                <div style={{
+                                  fontSize: '0.75rem',
+                                  color: '#888',
+                                  fontFamily: 'monospace',
+                                }}>
+                                  {achievement.company}
+                                </div>
+                              </div>
+                              <motion.div
+                                animate={{ rotate: expandedAchievement[index] ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                                style={{
+                                  fontSize: '0.8rem',
+                                  color: '#4ade80',
+                                  fontWeight: '700',
+                                  marginLeft: '12px',
+                                }}
+                              >
+                                ▼
+                              </motion.div>
                             </div>
-                            <div style={{
-                              fontSize: '0.8rem',
-                              color: '#c0c0c0',
-                              fontFamily: 'monospace',
-                              marginBottom: '2px',
-                            }}>
-                              {achievement.description}
-                            </div>
-                            <div style={{
-                              fontSize: '0.75rem',
-                              color: '#888',
-                              fontFamily: 'monospace',
-                            }}>
-                              {achievement.company}
-                            </div>
-                          </div>
-                          <div style={{
-                            fontSize: '0.85rem',
-                            color: '#4ade80',
-                            fontFamily: 'monospace',
-                            fontWeight: '700',
-                            background: 'rgba(74, 222, 128, 0.2)',
-                            padding: '6px 10px',
-                            border: '1px solid #4ade80',
-                            borderRadius: 0,
-                            marginLeft: '15px',
-                          }}>
-                            {achievement.year}
-                          </div>
+
+                            <AnimatePresence>
+                              {expandedAchievement[index] && (
+                                <motion.div
+                                  initial={{ opacity: 0, height: 0 }}
+                                  animate={{ opacity: 1, height: 'auto' }}
+                                  exit={{ opacity: 0, height: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  style={{
+                                    borderTop: '1px solid rgba(74, 222, 128, 0.2)',
+                                    paddingTop: '10px',
+                                    marginTop: '8px',
+                                  }}
+                                >
+                                  <div style={{
+                                    fontSize: '0.8rem',
+                                    color: '#c0c0c0',
+                                    fontFamily: 'monospace',
+                                    marginBottom: '8px',
+                                  }}>
+                                    {achievement.description}
+                                  </div>
+                                  <div style={{
+                                    fontSize: '0.85rem',
+                                    color: '#4ade80',
+                                    fontFamily: 'monospace',
+                                    fontWeight: '700',
+                                    background: 'rgba(74, 222, 128, 0.2)',
+                                    padding: '6px 10px',
+                                    border: '1px solid #4ade80',
+                                    borderRadius: '4px',
+                                    display: 'inline-block',
+                                  }}>
+                                    {achievement.year}
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </motion.div>
                         </motion.div>
                       ))}
+                      </div>
                     </div>
                   </div>
                 </div>

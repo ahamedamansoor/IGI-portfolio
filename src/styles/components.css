@@ -1,34 +1,18 @@
 /* --- Custom Cursor --- */
 .custom-cursor {
-  width: 6px;
-  height: 6px;
-  background-color: var(--accent-cyan);
+  width: 8px;
+  height: 8px;
+  background-color: #4ade80;
   border-radius: 50%;
   position: fixed;
   transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 10001;
-  box-shadow: 0 0 10px var(--accent-cyan);
+  box-shadow: 0 0 8px #4ade80;
 }
 
 .custom-cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(6, 182, 212, 0.4);
-  border-radius: 50%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 10000;
-  transition: width 0.3s, height 0.3s, border-color 0.3s, background-color 0.3s;
-}
-
-.custom-cursor-ring.hovered {
-  width: 50px;
-  height: 50px;
-  background-color: rgba(6, 182, 212, 0.08);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.2);
+  display: none;
 }
 
 /* --- Floating HUD Navigation --- */
@@ -1409,6 +1393,19 @@ footer {
   }
 }
 
+/* --- Experience Base Styles --- */
+.experience-content-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: auto;
+  maxHeight: 65vh;
+  overflowY: auto;
+  paddingRight: 15px;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* --- Experience Mobile Styles --- */
 @media (max-width: 768px) {
   .experience-header-mobile {
@@ -1427,21 +1424,24 @@ footer {
   
   .experience-container-mobile {
     padding: 15px;
-    maxWidth: 900px;
+    maxWidth: 1200px;
     margin: 8px auto;
     max-height: 70vh;
     minWidth: auto !important;
   }
   
   .experience-content-mobile {
-    gap: 15px;
-    maxHeight: 40vh;
+    gap: 0;
+    height: auto;
+    maxHeight: 70vh;
     overflowY: auto;
-    paddingRight: 10px;
+    paddingRight: 12px;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
   }
   
   .experience-content-mobile > div {
-    padding: 15px !important;
+    /*padding: 15px !important;*/
     marginBottom: 0 !important;
   }
   
@@ -1462,16 +1462,11 @@ footer {
   }
   
   .experience-content-mobile .expanded-content {
-    position: sticky;
-    top: 0;
-    background: rgba(0, 0, 0, 0.95);
-    zIndex: 10;
-    maxHeight: 35vh;
-    overflowY: auto;
-    paddingRight: 10px;
-    marginTop: 10px;
-    width: 100%;
-    maxWidth: 100%;
+    position: static;
+    background: transparent;
+    zIndex: 1;
+    maxHeight: none;
+    overflow: visible;
   }
   
   .experience-content-mobile .expanded-content > div:nth-child(1) {
@@ -1534,20 +1529,23 @@ footer {
   
   .experience-container-mobile {
     padding: 12px;
-    maxWidth: 900px;
+    maxWidth: 1200px;
     margin: 5px auto;
     max-height: 75vh;
   }
   
   .experience-content-mobile {
-    gap: 12px;
-    maxHeight: 45vh;
+    gap: 0;
+    height: auto;
+    maxHeight: 65vh;
     overflowY: auto;
-    paddingRight: 8px;
+    paddingRight: 10px;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
   }
   
   .experience-content-mobile > div {
-    padding: 12px !important;
+    /*padding: 12px !important;*/
   }
   
   .experience-content-mobile > div > div:nth-child(2) > h4 {
@@ -1562,16 +1560,11 @@ footer {
   }
   
   .experience-content-mobile .expanded-content {
-    position: sticky;
-    top: 0;
-    background: rgba(0, 0, 0, 0.95);
-    zIndex: 10;
-    maxHeight: 40vh;
-    overflowY: auto;
-    paddingRight: 8px;
-    marginTop: 8px;
-    width: 100%;
-    maxWidth: 100%;
+    position: static;
+    background: transparent;
+    zIndex: 1;
+    maxHeight: none;
+    overflow: visible;
   }
   
   .experience-content-mobile .expanded-content > div:nth-child(1) {
@@ -1812,9 +1805,11 @@ footer {
   .contact-content-mobile {
     gap: 12px;
     marginBottom: 20px;
+    height: auto;
+    maxHeight: 70vh;
     overflowY: auto;
-    maxHeight: 35vh;
-    paddingRight: 10px;
+    paddingRight: 12px;
+    -webkit-overflow-scrolling: touch;
   }
   
   .recognition-header-mobile {
@@ -1823,7 +1818,7 @@ footer {
     background: #000000;
     zIndex: 15;
     padding: 12px 0;
-    marginBottom: 12px;
+    marginBottom: 25px;
     paddingBottom: 8px;
     borderBottom: 2px solid #4ade80;
     marginTop: 10px;
@@ -1841,9 +1836,11 @@ footer {
   .contact-content-mobile {
     gap: 10px;
     marginBottom: 15px;
+    height: auto;
+    maxHeight: 65vh;
     overflowY: auto;
-    maxHeight: 25vh;
-    paddingRight: 8px;
+    paddingRight: 10px;
+    -webkit-overflow-scrolling: touch;
   }
   
   .recognition-header-mobile {
@@ -1871,15 +1868,17 @@ footer {
   }
   
   .expertise-content-mobile {
-    gridTemplateColumns: repeat(auto-fill, minmax(110px, 1fr)) !important;
+    gridTemplateColumns: repeat(auto-fill, minmax(100px, 1fr)) !important;
     gap: 10px !important;
+    height: auto;
+    maxHeight: 70vh;
     overflowY: auto;
-    maxHeight: 40vh;
-    paddingRight: 10px;
+    paddingRight: 12px;
+    -webkit-overflow-scrolling: touch;
   }
   
   .expertise-content-mobile > div {
-    padding: 12px 14px !important;
+    padding: 14px 16px 37px 16px !important;
     marginBottom: 0 !important;
     borderRadius: 4px !important;
   }
@@ -1915,15 +1914,17 @@ footer {
   }
   
   .expertise-content-mobile {
-    gridTemplateColumns: repeat(auto-fill, minmax(90px, 1fr)) !important;
+    gridTemplateColumns: repeat(auto-fill, minmax(80px, 1fr)) !important;
     gap: 8px !important;
+    height: auto;
+    maxHeight: 65vh;
     overflowY: auto;
-    maxHeight: 45vh;
-    paddingRight: 8px;
+    paddingRight: 10px;
+    -webkit-overflow-scrolling: touch;
   }
   
   .expertise-content-mobile > div {
-    padding: 10px 12px !important;
+    padding: 12px 14px 37px 14px !important;
     borderRadius: 3px !important;
   }
   
