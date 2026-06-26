@@ -1959,8 +1959,8 @@ footer {
   }
   
   .expertise-content-mobile {
-    gridTemplateColumns: repeat(auto-fill, minmax(100px, 1fr)) !important;
-    gap: 10px !important;
+    gridTemplateColumns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+    gap: 12px !important;
     height: auto;
     maxHeight: 70vh;
     overflowY: auto;
@@ -1969,7 +1969,7 @@ footer {
   }
   
   .expertise-content-mobile > div {
-    padding: 14px 16px 37px 16px !important;
+    padding: 12px 14px 16px 14px !important;
     marginBottom: 0 !important;
     borderRadius: 4px !important;
   }
@@ -2005,8 +2005,8 @@ footer {
   }
   
   .expertise-content-mobile {
-    gridTemplateColumns: repeat(auto-fill, minmax(80px, 1fr)) !important;
-    gap: 8px !important;
+    gridTemplateColumns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+    gap: 10px !important;
     height: auto;
     maxHeight: 65vh;
     overflowY: auto;
@@ -2015,7 +2015,7 @@ footer {
   }
   
   .expertise-content-mobile > div {
-    padding: 12px 14px 37px 14px !important;
+    padding: 10px 12px 14px 12px !important;
     borderRadius: 3px !important;
   }
   
