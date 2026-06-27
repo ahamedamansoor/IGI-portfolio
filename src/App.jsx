@@ -209,7 +209,6 @@ function App() {
           padding: '10px',
           fontFamily: 'monospace',
           fontSize: '16px',
-          cursor: 'pointer',
           fontWeight: 'bold',
           transition: 'all 0.3s ease',
           width: '40px',
@@ -253,7 +252,7 @@ function App() {
             onClick={() => setNameAnimationComplete(true)}
             onKeyDown={() => setNameAnimationComplete(true)}
             tabIndex={0}
-            style={{ cursor: 'pointer', outline: 'none' }}
+            style={{ outline: 'none' }}
           >
             <MarcusNameAnimation />
           </motion.div>
@@ -730,7 +729,6 @@ function App() {
                               border: expandedExperience[exp.id] ? '1px solid #4ade80' : '1px solid rgba(74, 222, 128, 0.2)',
                               borderRadius: '8px',
                               padding: '12px 24px',
-                              cursor: 'pointer',
                               transition: 'all 0.3s ease',
                             }}
                             onClick={() => {
@@ -967,7 +965,6 @@ function App() {
                             border: expandedProject.coderpod ? '1px solid #4ade80' : '1px solid rgba(74, 222, 128, 0.2)',
                             borderRadius: '8px',
                             padding: '12px 24px',
-                            cursor: 'pointer',
                             transition: 'all 0.3s ease',
                           }}
                           onClick={() => setExpandedProject(prev => ({ ...prev, coderpod: !prev.coderpod }))}
@@ -1745,7 +1742,6 @@ function App() {
                               padding: '12px 16px',
                               position: 'relative',
                               transition: 'all 0.3s ease',
-                              cursor: 'pointer',
                             }}
                             onClick={() => {
                               const isCurrentlyExpanded = expandedTestimonial[index];

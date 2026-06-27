@@ -1341,7 +1341,6 @@ footer {
   border: 1px solid #4ade80;
   color: #ffffff;
   border-radius: 0;
-  cursor: pointer;
   font-family: 'Share Tech Mono', monospace;
   font-size: 14px;
   transition: all 0.2s ease;
@@ -1707,7 +1706,6 @@ footer {
   gridTemplateColumns: 1fr auto;
   gap: 20px;
   alignItems: center;
-  cursor: pointer;
 }
 
 .projects-title {
@@ -1815,7 +1813,6 @@ footer {
   fontSize: 14px;
   fontWeight: bold;
   textDecoration: none;
-  cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;

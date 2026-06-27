@@ -40,7 +40,6 @@ export default function MarcusNavigation({ onMissionSelect }) {
             border: '1px solid #4ade80',
             borderRadius: '0',
             color: '#4ade80',
-            cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -95,7 +94,6 @@ export default function MarcusNavigation({ onMissionSelect }) {
               border: '1px solid #4ade80',
               borderRadius: '0',
               color: '#4ade80',
-              cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -123,7 +121,6 @@ export default function MarcusNavigation({ onMissionSelect }) {
                   background: activeMission === mission.id ? 'rgba(74, 222, 128, 0.3)' : 'transparent',
                   border: activeMission === mission.id ? '1px solid #4ade80' : 'none',
                   borderRadius: '0',
-                  cursor: 'pointer',
                   justifyContent: isExpanded ? 'flex-start' : 'center',
                 }}
               >
