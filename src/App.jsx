@@ -36,19 +36,19 @@ function App() {
       project: 'Crosswork Network Controller - Enterprise network analysis and management platform',
       promotion: 'Promoted from G6 to G8 in 2023',
       achievements: [
-        'Led development of an onboarding feature to structure enterprise applications, creating reusable plug-and-play components for long-term maintainability',
-        'Proactively identified and resolved multiple security vulnerabilities including XSS, ensuring application security and compliance',
-        'Led development of 31 reusable Angular components adopted organization-wide, establishing component library standards',
-        'Delivered 46% performance improvement, reducing login/page load times from 12s to 6.5s through code optimization',
-        'Optimized device CSV export for 25,000 devices, reducing processing time by 89% (75s to 8s)',
-        'Spearheaded Angular upgrades from version 8 to 21, maintaining alignment with framework releases',
-        'Integrated Playwright with Jenkins pipeline for the sanity run. Also enforcing 75% code coverage and 100% test pass rate for PR approvals',
-        'Introduced Playwright for visual regression testing and Mermaid for workflow documentation',
-        'Conducted multiple POCs on AI integration and agentic AI workflows to enhance application capabilities',
-        'Led India team for efficient CNC deliveries and bug fixes across IST timezone',
-        'Collaborated with cross-functional stakeholders to align technical specifications with project goals'
+        'Designed, developed, and maintained enterprise-scale frontend applications for network management platforms used by global customers',
+        'Architected and led development of 31 reusable Angular components, establishing organization-wide UI component standards adopted across multiple product teams',
+        'Delivered a 46% performance improvement, cutting login and page-load times from 12s to 6.5s through targeted code and rendering optimizations',
+        'Re-engineered device CSV export pipeline for 25,000+ devices, reducing processing time by 89% (75s to 8s)',
+        'Led Angular framework migrations from version 8 to 21, ensuring long-term maintainability and adoption of modern best practices',
+        'Converted business requirements and UX designs into responsive, accessible, and user-friendly interfaces',
+        'Integrated SonarQube with Jenkins CI/CD pipeline, enforcing 75%+ code coverage and a 100% test pass-rate gate for all pull request approvals',
+        'Introduced Playwright for automated visual regression testing and promoted structured technical documentation using Mermaid diagrams',
+        'Drove multiple proof-of-concept initiatives on AI integration and agentic AI workflows to enhance application capabilities and developer productivity',
+        'Led the India frontend team by driving technical discussions, mentoring engineers, and conducting code reviews; participated in Agile ceremonies including sprint planning, estimation, and backlog refinement',
+        'Collaborated with product managers, UX designers, backend developers, DevOps, and QA to deliver high-quality features'
       ],
-      technologies: 'Angular 8-21, TypeScript, RxJS, React, Next.js, JavaScript ES6, HTML5, CSS3, SASS, Bootstrap, Jasmine, Playwright, Jenkins, SonarQube, D3.js, SVG, Canvas, Claude, GitHub Copilot, Windsurf'
+      technologies: 'Angular 8-21, TypeScript, RxJS, React, React Router, Zustand, Next.js, JavaScript ES6, HTML5, CSS3, SASS, Bootstrap, Jasmine, Playwright, Docker, Jenkins, SonarQube, D3.js, SVG, Canvas, Claude, GitHub Copilot, Windsurf'
     },
     {
       id: 2,
@@ -59,11 +59,11 @@ function App() {
       status: 'PREVIOUS',
       project: 'Home Genius - Virtual real estate brokerage platform',
       achievements: [
-        'Developed features for property viewing, price comparison, agent communication, and online paperwork handling',
-        'Built responsive user interfaces enabling seamless property browsing and visit scheduling',
-        'Implemented real-time chat functionality and integrated local amenity discovery features'
+        'Developed the platform\'s core frontend using React, building end-to-end features for property viewing, price comparison, agent communication, and online paperwork processing',
+        'Built responsive, high-performance React UIs enabling seamless property browsing and visit scheduling for end users',
+        'Implemented real-time chat functionality and integrated local amenity discovery to enhance user engagement'
       ],
-      technologies: 'Angular 8, React, HTML5, CSS3, SASS, JavaScript ES6, RxJS, Azure, Bootstrap, Jasmine'
+      technologies: 'React, Redux, React Router, JavaScript ES6, HTML5, CSS3, SASS, Styled Components, REST APIs, Azure, Bootstrap, Jasmine'
     },
     {
       id: 3,
@@ -561,15 +561,18 @@ function App() {
                     overflowY: 'auto',
                     paddingRight: '15px',
                   }}>
-                    {['HTML5', 'CSS3', 'SASS', 'JavaScript ES6', 'TypeScript', 'Angular 8-19', 'React', 'Next.js', 'RxJS', 'Bootstrap', 'D3.js', 'AG-Grid', 'SVG', 'Canvas', 'Node.js', 'Go Lang', 'REST API', 'Jenkins', 'SonarQube', 'Playwright', 'Jasmine', 'Git', 'Azure', 'Webpack', 'Figma', 'Pixel Perfect Pro'].map((skill, skillIndex) => {
+                    {['HTML5', 'CSS3', 'SASS', 'JavaScript ES6', 'TypeScript', 'Angular 8-21', 'React', 'React Router', 'Zustand', 'Next.js', 'RxJS', 'Bootstrap', 'D3.js', 'AG-Grid', 'SVG', 'Canvas', 'Node.js', 'Go', 'REST APIs', 'Docker', 'Jenkins', 'SonarQube', 'Playwright', 'Jasmine', 'Git', 'Azure', 'Webpack', 'Figma', 'Pixel Perfect Pro', 'Claude', 'GitHub Copilot', 'Windsurf', 'Codex', 'Perplexity', 'Gemini', 'ChatGPT', 'Grok'].map((skill, skillIndex) => {
                       const skillPercentages = {
                         'HTML5': 95, 'CSS3': 95, 'SASS': 90, 'JavaScript ES6': 95,
-                        'TypeScript': 92, 'Angular 8-19': 90, 'React': 95, 'Next.js': 90,
-                        'RxJS': 85, 'Bootstrap': 92, 'D3.js': 85, 'AG-Grid': 88,
-                        'SVG': 90, 'Canvas': 85, 'Node.js': 88, 'Go Lang': 80,
-                        'REST API': 92, 'Jenkins': 85, 'SonarQube': 85, 'Playwright': 88,
-                        'Jasmine': 85, 'Git': 95, 'Azure': 85, 'Webpack': 88,
-                        'Figma': 90, 'Pixel Perfect Pro': 95
+                        'TypeScript': 92, 'Angular 8-21': 90, 'React': 95, 'React Router': 90,
+                        'Zustand': 88, 'Next.js': 90, 'RxJS': 85, 'Bootstrap': 92,
+                        'D3.js': 85, 'AG-Grid': 88, 'SVG': 90, 'Canvas': 85,
+                        'Node.js': 88, 'Go': 80, 'REST APIs': 92, 'Docker': 85,
+                        'Jenkins': 85, 'SonarQube': 85, 'Playwright': 88, 'Jasmine': 85,
+                        'Git': 95, 'Azure': 85, 'Webpack': 88, 'Figma': 90,
+                        'Pixel Perfect Pro': 95, 'Claude': 92, 'GitHub Copilot': 92,
+                        'Windsurf': 90, 'Codex': 88, 'Perplexity': 85, 'Gemini': 85,
+                        'ChatGPT': 85, 'Grok': 82
                       };
                       const percentage = skillPercentages[skill] || 90;
                       const level = percentage >= 95 ? 'EXPERT' : percentage >= 85 ? 'ADVANCED' : 'INTERMEDIATE';

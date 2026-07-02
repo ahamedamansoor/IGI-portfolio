@@ -12,7 +12,7 @@ export default function About() {
     {
       title: '[IDENTITY]',
       subtitle: 'AGENT PROFILE',
-      content: "Hello, I'm Ahamed Mansoor—a full-stack developer with a relentless drive to build complete, production-ready applications from concept to deployment. With over 6 years of experience spanning frontend finesse and backend architecture, I don't just craft interfaces—I architect entire ecosystems. From pixel-perfect user experiences to robust server-side systems, I transform complex requirements into seamless, scalable solutions that stand the test of production.",
+      content: "Senior Software Engineer with 6+ years of experience architecting and scaling enterprise B2B SaaS applications for global clients. Deep specialization in Angular and React, with a consistent track record of delivering measurable performance gains, building reusable component architectures, and leading and mentoring distributed engineering teams. Recognized with 19 internal awards, including 2 Great Impact honors, for driving high-value technical initiatives. Passionate about adopting emerging technologies and leveraging AI-assisted development tools (Claude, GitHub Copilot, Codex, Windsurf) to accelerate delivery and elevate code quality.",
       expanded: "",
       skills: []
     },
