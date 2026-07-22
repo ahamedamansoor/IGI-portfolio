@@ -1,11 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function About() {
-  const [isDecrypted, setIsDecrypted] = useState(false);
-  const [typedText, setTypedText] = useState('');
-  const [sectionIndex, setSectionIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
   const [currentCard, setCurrentCard] = useState(0);
 
   const sections = [
@@ -19,7 +15,7 @@ export default function About() {
     {
       title: '[MY JOURNEY]',
       subtitle: 'MISSION HISTORY',
-      content: "My journey into web development began with a bold leap from Electrical Engineering—where I spent 2.5 years mastering industrial programming and commissioning. That experience gave me the foundation, but my passion for creating beautiful, functional interfaces pulled me toward a new horizon. I embraced the challenge, transforming my technical discipline into creative innovation. Today, I channel that same dedication into crafting digital experiences that inspire and delight, proving that the best paths are often the ones we forge ourselves.",
+      content: "From industrial automation to pixel-perfect interfaces—my path to frontend engineering was forged through 2.5 years of hands-on experience in electrical engineering and industrial programming. That foundation in systems thinking and precision engineering became the bedrock of my transition into web development. What started as curiosity evolved into a relentless pursuit of crafting exceptional user experiences. Today, I bridge the gap between technical complexity and intuitive design, bringing the same rigor and problem-solving mindset from industrial systems to the dynamic world of modern web applications.",
       expanded: "",
       skills: []
     },
@@ -31,36 +27,6 @@ export default function About() {
       skills: []
     }
   ];
-
-  useEffect(() => {
-    const decryptTimer = setTimeout(() => setIsDecrypted(true), 500);
-    return () => clearTimeout(decryptTimer);
-  }, []);
-
-  useEffect(() => {
-    if (!isDecrypted) return;
-
-    const typeTimer = setTimeout(() => {
-      if (sectionIndex < sections.length) {
-        if (charIndex < sections[sectionIndex].content.length) {
-          setTypedText(prev => {
-            const currentSections = prev.split('|||');
-            while (currentSections.length <= sectionIndex) {
-              currentSections.push('');
-            }
-            currentSections[sectionIndex] += sections[sectionIndex].content[charIndex];
-            return currentSections.join('|||');
-          });
-          setCharIndex(charIndex + 1);
-        } else {
-          setSectionIndex(sectionIndex + 1);
-          setCharIndex(0);
-        }
-      }
-    }, 15);
-
-    return () => clearTimeout(typeTimer);
-  }, [isDecrypted, sectionIndex, charIndex, sections]);
 
   return (
     <motion.div
@@ -158,18 +124,9 @@ export default function About() {
                 color: '#ffffff',
                 marginBottom: '15px',
                 fontWeight: '400',
+                whiteSpace: 'pre-line',
               }}>
-                {typedText.split('|||')[currentCard] || ''}
-                {currentCard === sectionIndex && charIndex < sections[sectionIndex].content.length && (
-                  <span
-                    style={{ 
-                      color: '#4ade80',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    ▊
-                  </span>
-                )}
+                {sections[currentCard]?.content || ''}
               </p>
 
               {/* Expanded Content - Show only if it exists */}
