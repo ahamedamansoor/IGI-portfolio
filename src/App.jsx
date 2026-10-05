@@ -51,9 +51,18 @@ function App() {
         'Built proof-of-concept solutions leveraging AI-assisted development and agentic AI workflows to improve developer productivity and accelerate feature delivery',
         'Led the India frontend engineering team by driving technical architecture discussions, mentoring engineers, conducting code reviews, and promoting frontend engineering best practices',
         'Collaborated with Product Managers, UX Designers, Backend Engineers, DevOps, and QA teams throughout Agile software development, including sprint planning, estimation, backlog refinement, implementation, testing, and production releases',
-        'Contributed to frontend architecture decisions involving reusable component libraries, application scalability, maintainability, accessibility, performance optimization, and developer experience'
+        'Contributed to frontend architecture decisions involving reusable component libraries, application scalability, maintainability, accessibility, performance optimization, and developer experience',
+        'Led a five-member development team in delivering a key onboarding feature (bringing all features developed for 6 releases into a single workflow to guide users), completing production releases on schedule',
+        'Designed and developed the end-to-end onboarding experience across the frontend application and Go-based backend services',
+        'Integrated Cisco AI capabilities to introduce intelligent, AI-powered functionality and improve the overall user experience',
+        'Implemented secure Single Sign-On (SSO) OKTA authentication, streamlining user access and simplifying the login journey',
+        'Created reusable, WCAG-compliant shared components to ensure accessibility, visual consistency, and faster feature development across the application',
+        'Implemented internationalization (i18n) and multi-language support, enabling the application to serve users across different regions and languages',
+        'Successfully developed a proof of concept (POC) integrating React and Angular applications into a unified, seamless application experience',
+        'Integrated frontend interfaces with backend APIs and handled authentication, validation, loading, error, and edge-case scenarios',
+        'Supported release planning, testing, deployment, and production issue resolution to ensure stable and successful product releases'
       ],
-      technologies: 'Angular 8--21, React, Next.js, TypeScript, JavaScript (ES6+), RxJS, React Router, Zustand, HTML5, CSS3, SASS, Bootstrap, D3.js, SVG, Canvas, REST APIs, Playwright, Jasmine, Jenkins, SonarQube, Docker, Git, Figma, Claude, GitHub Copilot, Windsurf'
+      technologies: 'Angular 8--21, React, Next.js, TypeScript, JavaScript (ES6+), RxJS, React Router, Zustand, HTML5, CSS3, SASS, Bootstrap, D3.js, SVG, Canvas, REST APIs, Playwright, Jasmine, Jenkins, SonarQube, Docker, Git, Figma, OKTA SSO, i18n, Claude, GitHub Copilot, Windsurf'
     },
     {
       id: 2,
@@ -64,16 +73,16 @@ function App() {
       status: 'PREVIOUS',
       project: 'Home Genius -- Virtual Real Estate Brokerage Platform',
       achievements: [
-        'Designed, developed, and maintained responsive single-page applications (SPAs) using React, Angular, TypeScript, JavaScript, HTML5, CSS3, and REST APIs, delivering intuitive user experiences for property search, virtual tours, price comparison, agent communication, and digital paperwork',
-        'Developed reusable UI components and implemented efficient state management using React, Redux, and Angular, improving application scalability, maintainability, and development productivity',
-        'Collaborated with UI/UX designers to translate Figma designs into responsive, pixel-perfect, cross-browser compatible, and accessible user interfaces using HTML5, CSS3, SASS, Bootstrap, and Styled Components',
+        'Designed, developed, and maintained responsive single-page applications (SPAs) using React, TypeScript, JavaScript, HTML5, CSS3, and REST APIs, delivering intuitive user experiences for property search, virtual tours, price comparison, agent communication, and digital paperwork',
+        'Developed reusable UI components and implemented efficient state management using React, Redux, improving application scalability, maintainability, and development productivity',
+        'Collaborated with UI/UX designers to translate Figma designs into responsive, pixel-perfect, cross-browser compatible, and accessible user interfaces using HTML5, CSS3, Bootstrap, and Styled Components',
         'Integrated REST APIs to support real-time property listings, agent communication, visit scheduling, document management, and dynamic data synchronization across the application',
         'Developed interactive features including real-time chat, location-based amenity discovery, property recommendations, and appointment scheduling, improving customer engagement and overall user experience',
         'Optimized frontend performance through component reusability, efficient rendering, code refactoring, and browser performance analysis, delivering a faster and smoother user experience',
         'Collaborated closely with backend engineers, product managers, and QA teams in an Agile environment to deliver new features, resolve production issues, conduct code reviews, and maintain high engineering standards',
         'Wrote unit tests using Jasmine and followed frontend best practices to ensure code quality, maintainability, and application reliability'
       ],
-      technologies: 'React, Angular, Redux, React Router, TypeScript, JavaScript (ES6+), HTML5, CSS3, SASS, Bootstrap, Styled Components, REST APIs, Jasmine, Azure, Git'
+      technologies: 'React, Redux Toolkit, React Context API, React Router, TypeScript, JavaScript (ES6+), HTML5, CSS3, Bootstrap, Styled Components, REST APIs, Jasmine, Azure, Git'
     },
     {
       id: 3,
