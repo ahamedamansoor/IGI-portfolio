@@ -580,11 +580,11 @@ function App() {
                     overflowY: 'auto',
                     paddingRight: '15px',
                   }}>
-                    {['HTML5', 'CSS3', 'SASS', 'JavaScript ES6', 'TypeScript', 'Angular 8-21', 'React', 'React Router', 'Zustand', 'Next.js', 'RxJS', 'Bootstrap', 'D3.js', 'AG-Grid', 'SVG', 'Canvas', 'Node.js', 'Go', 'REST APIs', 'Docker', 'Jenkins', 'SonarQube', 'Playwright', 'Jasmine', 'Git', 'Azure', 'Webpack', 'Figma', 'Pixel Perfect Pro', 'Claude', 'GitHub Copilot', 'Windsurf', 'Codex', 'Perplexity', 'Gemini', 'ChatGPT', 'Grok'].map((skill, skillIndex) => {
+                    {['HTML5', 'CSS3', 'SASS', 'JavaScript ES6', 'TypeScript', 'Angular 8-21', 'React', 'React Router', 'Zustand', 'Ionic 4+', 'Capacitor 8+', 'Next.js', 'RxJS', 'Bootstrap', 'D3.js', 'AG-Grid', 'SVG', 'Canvas', 'Node.js', 'Go', 'REST APIs', 'Docker', 'Jenkins', 'SonarQube', 'Playwright', 'Jasmine', 'Git', 'Azure', 'Webpack', 'Figma', 'Pixel Perfect Pro', 'Claude', 'GitHub Copilot', 'Windsurf', 'Codex', 'Perplexity', 'Gemini', 'ChatGPT', 'Grok'].map((skill, skillIndex) => {
                       const skillPercentages = {
                         'HTML5': 95, 'CSS3': 95, 'SASS': 90, 'JavaScript ES6': 95,
                         'TypeScript': 92, 'Angular 8-21': 90, 'React': 95, 'React Router': 90,
-                        'Zustand': 88, 'Next.js': 90, 'RxJS': 85, 'Bootstrap': 92,
+                        'Zustand': 88, 'Ionic 4+': 85, 'Capacitor 8+': 85, 'Next.js': 90, 'RxJS': 85, 'Bootstrap': 92,
                         'D3.js': 85, 'AG-Grid': 88, 'SVG': 90, 'Canvas': 85,
                         'Node.js': 88, 'Go': 80, 'REST APIs': 92, 'Docker': 85,
                         'Jenkins': 85, 'SonarQube': 85, 'Playwright': 88, 'Jasmine': 85,
